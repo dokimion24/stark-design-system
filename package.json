@@ -14,10 +14,17 @@
     "release": "turbo run build --filter=docs^... && changeset publish",
     "prepare": "husky"
   },
+  "lint-staged": {
+    "**/*.{js,jsx,ts,tsx}": [
+      "eslint --cache --fix",
+      "prettier --cache --write"
+    ]
+  },
   "devDependencies": {
     "@changesets/cli": "^2.27.1",
     "@typescript-eslint/eslint-plugin": "^8.10.0",
     "@typescript-eslint/parser": "^8.10.0",
+    "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-config-turbo": "^1.13.3",
     "eslint-import-resolver-typescript": "^3.6.1",

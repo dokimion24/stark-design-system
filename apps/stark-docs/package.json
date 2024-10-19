@@ -15,12 +15,6 @@
     "react-dom": "^18.2.0",
     "stark-ui": "workspace:*"
   },
-  "lint-staged": {
-    "**/*.{js,jsx,ts,tsx}": [
-      "eslint --cache --fix",
-      "prettier --cache --write"
-    ]
-  },
   "devDependencies": {
     "@storybook/addon-actions": "^8.2.6",
     "@storybook/addon-essentials": "^8.2.6",
