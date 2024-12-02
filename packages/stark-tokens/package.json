@@ -1,12 +1,32 @@
 {
-  "name": "stark-tokens",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "starkds-tokens",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "directory": "packages/stark-tokens"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "package.json"
+  ],
+  "type": "module",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "rm -rf dist && rollup -c --bundleConfigAsCjs && tsc --emitDeclarationOnly"
   },
   "keywords": [],
-  "author": "",
+  "author": "dokimion24",
   "license": "ISC"
 }
