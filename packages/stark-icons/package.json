@@ -1,6 +1,6 @@
 {
-  "name": "stark-icons",
-  "version": "0.1.5",
+  "name": "starkds-icons",
+  "version": "0.0.1",
   "description": "",
   "repository": {
     "type": "git",
@@ -30,6 +30,6 @@
     "format": "prettier --write ./src/component/**/*"
   },
   "keywords": [],
-  "author": "gdsc-hongik",
+  "author": "dokimion24",
   "license": "ISC"
 }
