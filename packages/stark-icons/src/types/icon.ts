@@ -5,6 +5,6 @@ export interface IconProps extends HTMLAttributes<SVGSVGElement> {
   width?: number | string;
   height?: number | string;
   viewBox?: string;
-  // fill?: ColorToken;
-  // stroke?: ColorToken;
+  fill?: ColorToken;
+  stroke?: ColorToken;
 }
