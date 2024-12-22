@@ -1,17 +1,33 @@
 {
-  "name": "stark-theme",
-  "version": "0.0.0",
-  "private": true,
+  "name": "starkds-theme",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "directory": "packages/stark-theme"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "package.json"
+  ],
   "type": "module",
   "exports": {
-    ".": "./index.ts",
-    ".": "./src/index.ts",
-    "./utils": "./utils/index.ts"
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "rm -rf dist && rollup -c --bundleConfigAsCjs && tsc --emitDeclarationOnly"
   },
   "devDependencies": {
-    "@pandacss/dev": "^0.39.0"
+    "starkds-tokens": "workspace:^"
   },
-  "dependencies": {
-    "wowds-tokens": "workspace:^"
-  }
+  "keywords": [],
+  "author": "dokimion24",
+  "license": "ISC"
 }

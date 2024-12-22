@@ -2,9 +2,9 @@
   "private": true,
   "scripts": {
     "build": "turbo run build",
-    "tokens:build": "turbo run build --filter=stark-tokens",
-    "ui:build": "turbo run build --filter=stark-ui",
-    "icons:build": "turbo run build --filter=stark-icons",
+    "tokens:build": "turbo run build --filter=starkds-tokens",
+    "ui:build": "turbo run build --filter=starkds-ui",
+    "icons:build": "turbo run build --filter=starkds-icons",
     "dev": "turbo run dev",
     "lint": "turbo run lint",
     "clean": "turbo run clean && rm -rf node_modules",
@@ -12,7 +12,9 @@
     "changeset": "changeset",
     "version-packages": "changeset version",
     "release": "turbo run build --filter=docs^... && changeset publish",
-    "prepare": "husky"
+    "prepare": "husky",
+    "stark-ui:codegen": "cd packages/wow-stark && pnpm panda codegen",
+    "stark-docs:codegen": "cd apps/wow-stark && pnpm panda codegen"
   },
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx}": [
@@ -29,6 +31,7 @@
     "@babel/preset-typescript": "^7.24.1",
     "@changesets/changelog-git": "^0.2.0",
     "@changesets/cli": "^2.27.1",
+    "@pandacss/dev": "^0.48.0",
     "@rollup/plugin-alias": "^5.1.0",
     "@rollup/plugin-babel": "^6.0.4",
     "@rollup/plugin-commonjs": "^25.0.7",
@@ -68,7 +71,7 @@
     "rollup-plugin-preserve-directives": "^0.4.0",
     "rollup-plugin-visualizer": "^5.12.0",
     "shared-config": "workspace:^",
-    "starkds-icons": "workspace:^",
+    "starkds-theme": "workspace:^",
     "starkds-tokens": "workspace:^",
     "tsc-alias": "^1.8.10",
     "tsx": "^4.19.2",
