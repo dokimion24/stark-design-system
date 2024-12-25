@@ -13,7 +13,7 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "stark-ui": "workspace:*"
+    "starkds-ui": "workspace:*"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^8.2.6",
