@@ -12,3 +12,7 @@ server/dist
 public/dist
 storybook-static/
 .eslintcache
+
+## Panda
+styled-system
+styled-system-studio
