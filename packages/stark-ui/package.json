@@ -14,12 +14,24 @@
     "build": "rm -rf dist && rollup -c --bundleConfigAsCjs && tsc-alias && panda cssgen --outfile dist/styles.css",
     "dev": "tsup --watch",
     "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}' --max-warnings 0",
-    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "devDependencies": {
+    "@chromatic-com/storybook": "^3.2.4",
+    "@storybook/addon-essentials": "^8.5.0",
+    "@storybook/addon-interactions": "^8.5.0",
+    "@storybook/addon-onboarding": "^8.5.0",
+    "@storybook/blocks": "^8.5.0",
+    "@storybook/react": "^8.5.0",
+    "@storybook/react-vite": "^8.5.0",
+    "@storybook/test": "^8.5.0",
     "@types/react": "^18.2.61",
     "@types/react-dom": "^18.2.19",
     "eslint": "^8.57.0",
+    "eslint-plugin-storybook": "^0.6.15",
+    "storybook": "^8.5.0",
     "tsup": "^8.0.2",
     "typescript": "^5.3.3"
   },
@@ -29,5 +41,10 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "eslintConfig": {
+    "extends": [
+      "plugin:storybook/recommended"
+    ]
   }
 }
