@@ -1,6 +1,4 @@
 {
-  "$schema": "https://json.schemastore.org/tsconfig",
-  "display": "React Library",
   "compilerOptions": {
     "declaration": true,
     "declarationMap": true,
@@ -19,8 +17,13 @@
     "outDir": "dist",
     "emitDeclarationOnly": true,
     "allowImportingTsExtensions": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+      "@styled-system/*": ["./styled-system/*"]
+    }
   },
-  "include": ["src"],
+  "include": ["src", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules", "dist"]
 }
