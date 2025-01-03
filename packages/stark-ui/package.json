@@ -16,7 +16,8 @@
     "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}' --max-warnings 0",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "chromatic": "npx chromatic --project-token=chpt_ba397a9e3d1cbbe"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^3.2.4",
@@ -29,6 +30,7 @@
     "@storybook/test": "^8.5.0",
     "@types/react": "^18.2.61",
     "@types/react-dom": "^18.2.19",
+    "chromatic": "^11.25.0",
     "eslint": "^8.57.0",
     "eslint-plugin-storybook": "^0.6.15",
     "storybook": "^8.5.0",
