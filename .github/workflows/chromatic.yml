@@ -38,27 +38,18 @@ jobs:
       # Install dependencies
       - name: Install Dependencies
         run: pnpm install --no-frozen-lockfile
-        working-directory: packages/wow-ui
+        working-directory: packages/stark-ui
 
       # Build Storybook
       - name: Build Storybook
         run: pnpm build-storybook
-        working-directory: packages/wow-ui
+        working-directory: packages/stark-ui
 
       # Publish Chromatic
       - name: Publish Chromatic
         id: chromatic
         uses: chromaui/action@v1
         with:
-          workingDir: packages/wow-ui
+          workingDir: packages/stark-ui
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           token: ${{ secrets.GITHUB_TOKEN }}
-
-      # Add commit comment with Storybook URL
-      - name: Add Commit Comment with URL
-        uses: machine-learning-apps/actions-add-comment@v1.1
-        with:
-          message: |
-            🚀 Storybook has been deployed: ${{ steps.chromatic.outputs.storybookUrl }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
