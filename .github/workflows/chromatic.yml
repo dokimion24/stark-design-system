@@ -1,41 +1,64 @@
-# Workflow name
 name: 'Chromatic Deployment'
 
-# Event for the workflow
-on: push
+on:
+  push:
+    branches:
+      - main
 
-# List of jobs
 jobs:
-  chromatic:
-    name: 'Run Chromatic'
+  chromatic-deployment:
     runs-on: ubuntu-latest
-    # Job steps
     steps:
-      # Checkout the repository
+      # Checkout repository
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      # Install pnpm
-      - name: Setup pnpm
-        run: npm install -g pnpm
+      # Setup Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
 
       # Cache pnpm dependencies
-      - name: Cache pnpm store
+      - name: Cache Dependencies
         uses: actions/cache@v3
         with:
           path: ~/.pnpm-store
-          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('pnpm-lock.yaml') }}
+          key: ${{ runner.os }}-pnpm-${{ hashFiles('pnpm-lock.yaml') }}
           restore-keys: |
-            ${{ runner.os }}-pnpm-store-
+            ${{ runner.os }}-pnpm-
 
-      # Install dependencies with pnpm
-      - name: Install dependencies
-        run: pnpm install
-
-      # Run Chromatic
-      - uses: chromaui/action@latest
+      # Setup pnpm
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v3
         with:
-          # Chromatic project token
+          version: 8
+
+      # Install dependencies
+      - name: Install Dependencies
+        run: pnpm install --no-frozen-lockfile
+        working-directory: packages/wow-ui
+
+      # Build Storybook
+      - name: Build Storybook
+        run: pnpm build-storybook
+        working-directory: packages/wow-ui
+
+      # Publish Chromatic
+      - name: Publish Chromatic
+        id: chromatic
+        uses: chromaui/action@v1
+        with:
+          workingDir: packages/wow-ui
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           token: ${{ secrets.GITHUB_TOKEN }}
+
+      # Add commit comment with Storybook URL
+      - name: Add Commit Comment with URL
+        uses: machine-learning-apps/actions-add-comment@v1.1
+        with:
+          message: |
+            🚀 Storybook has been deployed: ${{ steps.chromatic.outputs.storybookUrl }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
