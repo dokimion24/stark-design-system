@@ -1,0 +1,41 @@
+# Workflow name
+name: 'Chromatic Deployment'
+
+# Event for the workflow
+on: push
+
+# List of jobs
+jobs:
+  chromatic:
+    name: 'Run Chromatic'
+    runs-on: ubuntu-latest
+    # Job steps
+    steps:
+      # Checkout the repository
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # Install pnpm
+      - name: Setup pnpm
+        run: npm install -g pnpm
+
+      # Cache pnpm dependencies
+      - name: Cache pnpm store
+        uses: actions/cache@v3
+        with:
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      # Install dependencies with pnpm
+      - name: Install dependencies
+        run: pnpm install
+
+      # Run Chromatic
+      - uses: chromaui/action@latest
+        with:
+          # Chromatic project token
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
