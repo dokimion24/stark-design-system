@@ -4,8 +4,8 @@ on:
   push:
     branches:
       - main
-    # paths:
-    #   - packages/stark-ui/src/**
+    paths:
+      - packages/stark-ui/src/**
 
 jobs:
   chromatic-deployment:
@@ -42,14 +42,9 @@ jobs:
         run: pnpm install --no-frozen-lockfile
         working-directory: packages/stark-ui
 
-      - name: Build stark-theme
-        run: pnpm build
-        working-directory: packages/stark-theme
-
         # Build stark-ui before running Storybook
       - name: Build stark-ui
-        run: pnpm build
-        working-directory: packages/stark-ui
+        run: pnpm build --filter starkds-ui
 
       # Build Storybook
       - name: Build Storybook
