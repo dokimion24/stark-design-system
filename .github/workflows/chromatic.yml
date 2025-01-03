@@ -4,8 +4,8 @@ on:
   push:
     branches:
       - main
-    paths:
-      - packages/stark-ui/src/**
+    # paths:
+    #   - packages/stark-ui/src/**
 
 jobs:
   chromatic-deployment:
