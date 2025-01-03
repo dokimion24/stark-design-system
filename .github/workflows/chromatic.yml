@@ -40,6 +40,11 @@ jobs:
         run: pnpm install --no-frozen-lockfile
         working-directory: packages/stark-ui
 
+        # Build stark-ui before running Storybook
+      - name: Build stark-ui
+        run: pnpm build
+        working-directory: packages/stark-ui
+
       # Build Storybook
       - name: Build Storybook
         run: pnpm build-storybook
