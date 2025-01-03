@@ -43,8 +43,8 @@ jobs:
         working-directory: packages/stark-ui
 
         # Build stark-ui before running Storybook
-      - name: Build stark-ui
-        run: pnpm build --filter starkds-ui
+      - name: Build packages
+        run: pnpm build
 
       # Build Storybook
       - name: Build Storybook
