@@ -1,13 +1,11 @@
 name: 'Chromatic Deployment'
 
 on:
-  push:
+  pull_request:
     branches:
       - main
     paths:
-      - packages/stark-ui/src/**/*.stories.tsx
-      - packages/stark-ui/src/**/*.stories.mdx
-      - packages/stark-ui/.storybook/**
+      - packages/stark-ui/src/**
 
 jobs:
   chromatic-deployment:
