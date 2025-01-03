@@ -5,7 +5,9 @@ on:
     branches:
       - main
     paths:
-      - packages/stark-ui/src/**
+      - packages/stark-ui/src/**/*.stories.tsx
+      - packages/stark-ui/src/**/*.stories.mdx
+      - packages/stark-ui/.storybook/**
 
 jobs:
   chromatic-deployment:
