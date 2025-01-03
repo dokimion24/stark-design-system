@@ -42,9 +42,9 @@ jobs:
         run: pnpm install --no-frozen-lockfile
         working-directory: packages/stark-ui
 
-      - name: Build starkds-theme
+      - name: Build stark-theme
         run: pnpm build
-        working-directory: packages/starkds-theme
+        working-directory: packages/stark-theme
 
         # Build stark-ui before running Storybook
       - name: Build stark-ui
