@@ -4,7 +4,6 @@ import type { CssProperties } from './system-types';
 import type { Tokens } from '../tokens/index';
 
 export interface UtilityValues {
-  aspectRatio: Tokens['aspectRatios'];
   top: Tokens['spacing'];
   left: Tokens['spacing'];
   inset: 'auto' | Tokens['spacing'];
@@ -17,10 +16,7 @@ export interface UtilityValues {
   right: Tokens['spacing'];
   bottom: Tokens['spacing'];
   float: 'start' | 'end' | CssProperties['float'];
-  hideFrom: Tokens['breakpoints'];
-  hideBelow: Tokens['breakpoints'];
   flexBasis:
-    | Tokens['sizes']
     | '1/2'
     | '1/3'
     | '2/3'
@@ -82,13 +78,11 @@ export interface UtilityValues {
   spaceX: 'auto' | Tokens['spacing'] | CssProperties['marginInlineStart'];
   spaceY: 'auto' | Tokens['spacing'] | CssProperties['marginBlockStart'];
   outlineColor: Tokens['colors'];
-  outline: Tokens['borders'];
   outlineOffset: Tokens['spacing'];
   divideColor: Tokens['colors'];
   divideStyle: CssProperties['borderStyle'];
   width:
     | 'auto'
-    | Tokens['sizes']
     | '1/2'
     | '1/3'
     | '2/3'
@@ -118,7 +112,6 @@ export interface UtilityValues {
     | 'screen';
   inlineSize:
     | 'auto'
-    | Tokens['sizes']
     | '1/2'
     | '1/3'
     | '2/3'
@@ -148,7 +141,6 @@ export interface UtilityValues {
     | 'screen';
   minWidth:
     | 'auto'
-    | Tokens['sizes']
     | '1/2'
     | '1/3'
     | '2/3'
@@ -178,7 +170,6 @@ export interface UtilityValues {
     | 'screen';
   minInlineSize:
     | 'auto'
-    | Tokens['sizes']
     | '1/2'
     | '1/3'
     | '2/3'
@@ -208,7 +199,6 @@ export interface UtilityValues {
     | 'screen';
   maxWidth:
     | 'auto'
-    | Tokens['sizes']
     | '1/2'
     | '1/3'
     | '2/3'
@@ -238,7 +228,6 @@ export interface UtilityValues {
     | 'screen';
   maxInlineSize:
     | 'auto'
-    | Tokens['sizes']
     | '1/2'
     | '1/3'
     | '2/3'
@@ -268,7 +257,6 @@ export interface UtilityValues {
     | 'screen';
   height:
     | 'auto'
-    | Tokens['sizes']
     | 'svh'
     | 'lvh'
     | 'dvh'
@@ -290,7 +278,6 @@ export interface UtilityValues {
     | '5/6';
   blockSize:
     | 'auto'
-    | Tokens['sizes']
     | 'svh'
     | 'lvh'
     | 'dvh'
@@ -312,7 +299,6 @@ export interface UtilityValues {
     | '5/6';
   minHeight:
     | 'auto'
-    | Tokens['sizes']
     | 'svh'
     | 'lvh'
     | 'dvh'
@@ -334,7 +320,6 @@ export interface UtilityValues {
     | '5/6';
   minBlockSize:
     | 'auto'
-    | Tokens['sizes']
     | 'svh'
     | 'lvh'
     | 'dvh'
@@ -356,7 +341,6 @@ export interface UtilityValues {
     | '5/6';
   maxHeight:
     | 'auto'
-    | Tokens['sizes']
     | 'svh'
     | 'lvh'
     | 'dvh'
@@ -378,7 +362,6 @@ export interface UtilityValues {
     | '5/6';
   maxBlockSize:
     | 'auto'
-    | Tokens['sizes']
     | 'svh'
     | 'lvh'
     | 'dvh'
@@ -399,23 +382,35 @@ export interface UtilityValues {
     | '4/6'
     | '5/6';
   color: Tokens['colors'];
-  fontFamily: Tokens['fonts'];
-  fontSize: Tokens['fontSizes'];
-  fontWeight: Tokens['fontWeights'];
   fontSmoothing: 'antialiased' | 'subpixel-antialiased';
-  letterSpacing: Tokens['letterSpacings'];
-  lineHeight: Tokens['lineHeights'];
   textDecorationColor: Tokens['colors'];
   textEmphasisColor: Tokens['colors'];
   textIndent: Tokens['spacing'];
-  textShadow: Tokens['shadows'];
   textShadowColor: Tokens['colors'];
   textWrap: 'wrap' | 'balance' | 'nowrap';
   truncate: boolean;
   background: Tokens['colors'];
   backgroundColor: Tokens['colors'];
-  backgroundGradient: 'to-t' | 'to-tr' | 'to-r' | 'to-br' | 'to-b' | 'to-bl' | 'to-l' | 'to-tl';
-  textGradient: 'to-t' | 'to-tr' | 'to-r' | 'to-br' | 'to-b' | 'to-bl' | 'to-l' | 'to-tl';
+  backgroundGradient:
+    | Tokens['gradients']
+    | 'to-t'
+    | 'to-tr'
+    | 'to-r'
+    | 'to-br'
+    | 'to-b'
+    | 'to-bl'
+    | 'to-l'
+    | 'to-tl';
+  textGradient:
+    | Tokens['gradients']
+    | 'to-t'
+    | 'to-tr'
+    | 'to-r'
+    | 'to-br'
+    | 'to-b'
+    | 'to-bl'
+    | 'to-l'
+    | 'to-tl';
   gradientFrom: Tokens['colors'];
   gradientTo: Tokens['colors'];
   gradientVia: Tokens['colors'];
@@ -434,46 +429,24 @@ export interface UtilityValues {
   borderEndStartRadius: Tokens['radii'];
   borderEndEndRadius: Tokens['radii'];
   borderEndRadius: Tokens['radii'] | CssProperties['borderRadius'];
-  border: Tokens['borders'];
   borderColor: Tokens['colors'];
-  borderInline: Tokens['borders'];
   borderInlineColor: Tokens['colors'];
-  borderBlock: Tokens['borders'];
   borderBlockColor: Tokens['colors'];
-  borderLeft: Tokens['borders'];
   borderLeftColor: Tokens['colors'];
-  borderInlineStart: Tokens['borders'];
   borderInlineStartColor: Tokens['colors'];
-  borderRight: Tokens['borders'];
   borderRightColor: Tokens['colors'];
-  borderInlineEnd: Tokens['borders'];
   borderInlineEndColor: Tokens['colors'];
-  borderTop: Tokens['borders'];
   borderTopColor: Tokens['colors'];
-  borderBottom: Tokens['borders'];
   borderBottomColor: Tokens['colors'];
-  borderBlockEnd: Tokens['borders'];
   borderBlockEndColor: Tokens['colors'];
-  borderBlockStart: Tokens['borders'];
   borderBlockStartColor: Tokens['colors'];
-  boxShadow: Tokens['shadows'];
   boxShadowColor: Tokens['colors'];
   filter: 'auto';
-  blur: Tokens['blurs'];
   backdropFilter: 'auto';
-  backdropBlur: Tokens['blurs'];
   borderSpacing: Tokens['spacing'] | 'auto';
   borderSpacingX: Tokens['spacing'];
   borderSpacingY: Tokens['spacing'];
-  transitionTimingFunction: Tokens['easings'];
-  transitionDelay: Tokens['durations'];
-  transitionDuration: Tokens['durations'];
   transition: 'all' | 'common' | 'background' | 'colors' | 'opacity' | 'shadow' | 'transform';
-  animation: Tokens['animations'];
-  animationName: 'spin' | 'ping' | 'pulse' | 'bounce';
-  animationTimingFunction: Tokens['easings'];
-  animationDuration: Tokens['durations'];
-  animationDelay: Tokens['durations'];
   rotate: 'auto' | 'auto-3d' | CssProperties['rotate'];
   rotateX: CssProperties['rotate'];
   rotateY: CssProperties['rotate'];
@@ -532,7 +505,6 @@ export interface UtilityValues {
   caretColor: Tokens['colors'];
   scrollbar: 'visible' | 'hidden';
   scrollbarColor: Tokens['colors'];
-  scrollbarWidth: Tokens['sizes'];
   scrollMargin: Tokens['spacing'];
   scrollMarginLeft: Tokens['spacing'];
   scrollMarginRight: Tokens['spacing'];
@@ -568,46 +540,61 @@ export interface UtilityValues {
   debug: boolean;
   containerName: CssProperties['containerName'];
   colorPalette:
-    | 'current'
-    | 'black'
-    | 'white'
-    | 'transparent'
-    | 'rose'
-    | 'pink'
-    | 'fuchsia'
-    | 'purple'
-    | 'violet'
-    | 'indigo'
-    | 'blue'
-    | 'sky'
-    | 'cyan'
-    | 'teal'
-    | 'emerald'
-    | 'green'
-    | 'lime'
-    | 'yellow'
-    | 'amber'
-    | 'orange'
-    | 'red'
-    | 'neutral'
-    | 'stone'
-    | 'zinc'
     | 'gray'
-    | 'slate';
+    | 'grayDark'
+    | 'red'
+    | 'yellow'
+    | 'blue'
+    | 'white'
+    | 'black'
+    | 'primary'
+    | 'success'
+    | 'error'
+    | 'backgroundNormal'
+    | 'backgroundDimmer'
+    | 'errorBackground'
+    | 'blueDisabled'
+    | 'blueHover'
+    | 'bluePressed'
+    | 'shadowSmall'
+    | 'shadowMedium';
   textStyle:
-    | 'xs'
-    | 'sm'
-    | 'md'
-    | 'lg'
-    | 'xl'
-    | '2xl'
-    | '3xl'
-    | '4xl'
-    | '5xl'
-    | '6xl'
-    | '7xl'
-    | '8xl'
-    | '9xl';
+    | 'display2xlRegular'
+    | 'display2xlMedium'
+    | 'display2xlSemibold'
+    | 'display2xlBold'
+    | 'displayXlRegular'
+    | 'displayXlMedium'
+    | 'displayXlSemibold'
+    | 'displayXlBold'
+    | 'displayLgRegular'
+    | 'displayLgMedium'
+    | 'displayLgSemibold'
+    | 'displayLgBold'
+    | 'displayMdRegular'
+    | 'displayMdMedium'
+    | 'displayMdSemibold'
+    | 'displayMdBold'
+    | 'displaySmRegular'
+    | 'displaySmMedium'
+    | 'displaySmSemibold'
+    | 'displaySmBold'
+    | 'textXlRegular'
+    | 'textXlMedium'
+    | 'textXlSemibold'
+    | 'textXlBold'
+    | 'textLgRegular'
+    | 'textLgMedium'
+    | 'textLgSemibold'
+    | 'textLgBold'
+    | 'textSmRegular'
+    | 'textSmMedium'
+    | 'textSmSemibold'
+    | 'textSmBold'
+    | 'textXsRegular'
+    | 'textXsMedium'
+    | 'textXsSemibold'
+    | 'textXsBold';
 }
 
 type WithColorOpacityModifier<T> = [T] extends [string]
