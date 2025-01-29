@@ -24,11 +24,8 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v3
-        with:
-          version: 8
-          run_install: false
+     - name: Enable corepack and install pnpm
+      run: corepack enable && corepack prepare pnpm@latest --activate
 
       - name: Install Dependencies
         run: pnpm install --no-frozen-lockfile
