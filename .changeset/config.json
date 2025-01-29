@@ -1,10 +1,10 @@
 {
   "$schema": "https://unpkg.com/@changesets/config@2.0.0/schema.json",
-  "changelog": "@changesets/cli/changelog",
+  "changelog": ["@changesets/cli/changelog", { "repo": "dokimion24/stark-design-system" }],
   "commit": false,
   "fixed": [],
   "linked": [],
   "access": "public",
-  "updateInternalDependencies": "patch",
-  "ignore": ["@acme/docs"]
+  "baseBranch": "main",
+  "updateInternalDependencies": "patch"
 }
