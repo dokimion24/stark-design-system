@@ -59,19 +59,47 @@ export const colorTokenList = [
   'blackOpacity40',
   'blackOpacity60',
   'blackOpacity80',
+
+  'grayNeutral50',
+  'grayNeutral100',
+  'grayNeutral200',
+  'grayNeutral300',
+  'grayNeutral400',
+  'grayNeutral500',
+  'grayNeutral600',
+  'grayNeutral700',
+  'grayNeutral800',
+  'grayNeutral900',
+
+  'disabledBackground',
+  'disabledText',
+  'disabledBorder',
+
+  'textWhite',
+  'textBlack',
+
   'primary',
+  'primaryHoverBackground',
+  'primaryBorder',
+
+  'secondary',
+  'secondaryHoverBackground',
+  'secondaryBorder',
+
+  'outlineHoverBackground',
+
   'success',
   'error',
+
   'backgroundNormal',
   'backgroundDimmer',
   'errorBackground',
-  'blueDisabled',
-  'textBlueDisabled',
+
   'blueHover',
   'elevatedHover',
   'bluePressed',
   'blueBackgroundPressed',
-  'shadowSmall',
-  'shadowMedium',
-  'blueShadow',
+
+  'shadowXs',
+  'skeuomorphicShadow',
 ];
