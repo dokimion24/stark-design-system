@@ -15,6 +15,7 @@ export const colors = defineTokens.colors({
     900: { value: color.grayNeutral900 },
   },
   grayDark: {
+    50: { value: color.grayDark50 },
     100: { value: color.grayDark100 },
     200: { value: color.grayDark200 },
     300: { value: color.grayDark300 },
@@ -63,6 +64,19 @@ export const colors = defineTokens.colors({
   },
   white: { value: color.white },
   black: { value: color.black },
+
+  whiteOpacity: {
+    20: { value: color.whiteOpacity20 },
+    40: { value: color.whiteOpacity40 },
+    60: { value: color.whiteOpacity60 },
+    80: { value: color.whiteOpacity80 },
+  },
+  blackOpacity: {
+    20: { value: color.blackOpacity20 },
+    40: { value: color.blackOpacity40 },
+    60: { value: color.blackOpacity60 },
+    80: { value: color.blackOpacity80 },
+  },
 });
 
 export const semanticTokens = defineSemanticTokens({
@@ -79,6 +93,11 @@ export const semanticTokens = defineSemanticTokens({
     secondaryBorder: { value: color.secondaryBorder },
 
     outlineHoverBackground: { value: color.outlineHoverBackground },
+    activeBackground: { value: color.activeBackground },
+
+    border: { value: color.border },
+    focusBorder: { value: color.focusBorder },
+    placeholder: { value: color.placeholder },
 
     disabledBackground: { value: color.disabledBackground },
     disabledText: { value: color.disabledText },
@@ -88,6 +107,9 @@ export const semanticTokens = defineSemanticTokens({
     backgroundNormal: { value: color.backgroundNormal },
     backgroundDimmer: { value: color.backgroundDimmer },
     errorBackground: { value: color.errorBackground },
+
+    shadowXs: { value: color.shadowXs },
+    skeuomorphicShadow: { value: color.skeuomorphicShadow },
   },
 });
 
