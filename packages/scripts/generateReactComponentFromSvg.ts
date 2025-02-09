@@ -63,7 +63,7 @@ const createComponentContent = (
   );
   const hasFill = fillAttributes.length;
   const { width, height, viewBox } = extractSvgAttributes(svgContent);
-  const propsString = `{ className, ${width}, ${height}, ${viewBox}${hasStroke || hasFill ? ` ${hasStroke ? ', stroke = "white"' : ''}${hasFill ? ', fill = "white"' : ''}` : ''}, ...rest }`;
+  const propsString = `{ className, ${width}, ${height}, ${viewBox}${hasStroke || hasFill ? ` ${hasStroke ? ', stroke = "border"' : ''}${hasFill ? ', fill = "border"' : ''}` : ''}, ...rest }`;
   const modifiedSvgContent = svgContent
     .replace(/-(\w)/g, (_, letter) => letter.toUpperCase())
     .replace(/width="(\d+)"/g, `width={width}`)
@@ -79,7 +79,8 @@ const createComponentContent = (
 
   return `
     import { forwardRef } from 'react';
-    
+    import { color } from "starkds-tokens";
+ 
     import type { IconProps } from "@/types/icon.ts";
 
     const ${componentName} = forwardRef<SVGSVGElement, IconProps>(
