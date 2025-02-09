@@ -3,14 +3,14 @@ import { color } from 'starkds-tokens';
 
 import type { IconProps } from '@/types/icon.ts';
 
-const XClose = forwardRef<SVGSVGElement, IconProps>(
+const ChevronDown = forwardRef<SVGSVGElement, IconProps>(
   (
     { className, width = '24', height = '24', viewBox = '0 0 24 24', stroke = 'border', ...rest },
     ref,
   ) => {
     return (
       <svg
-        aria-label="x-close icon"
+        aria-label="chevron-down icon"
         className={className}
         fill="none"
         height={height}
@@ -20,17 +20,20 @@ const XClose = forwardRef<SVGSVGElement, IconProps>(
         xmlns="http://www.w3.org/2000/svg"
         {...rest}
       >
-        <path
-          d="M18 6L6 18M6 6L18 18"
-          stroke={color[stroke]}
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth="2"
-        />
+        <g id="chevronDown">
+          <path
+            d="M6 9L12 15L18 9"
+            id="Icon"
+            stroke={color[stroke]}
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+          />
+        </g>
       </svg>
     );
   },
 );
 
-XClose.displayName = 'XClose';
-export default XClose;
+ChevronDown.displayName = 'ChevronDown';
+export default ChevronDown;

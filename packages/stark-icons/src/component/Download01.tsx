@@ -1,10 +1,11 @@
 import { forwardRef } from 'react';
+import { color } from 'starkds-tokens';
 
 import type { IconProps } from '@/types/icon.ts';
 
 const Download01 = forwardRef<SVGSVGElement, IconProps>(
   (
-    { className, width = '82', height = '12', viewBox = '0 0 82 12', fill = 'white', ...rest },
+    { className, width = '82', height = '12', viewBox = '0 0 82 12', fill = 'border', ...rest },
     ref,
   ) => {
     return (
