@@ -1,7 +1,7 @@
 # starkds-icons
 
-## 0.1.0
+## 0.0.2
 
-### Minor Changes
+### Patch Changes
 
 - 02c38e3: Initial release of starkds

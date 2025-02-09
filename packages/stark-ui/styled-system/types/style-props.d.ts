@@ -327,9 +327,7 @@ export interface SystemProperties {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/animation
    */
-  animation?: ConditionalValue<
-    UtilityValues['animation'] | CssVars | CssProperties['animation'] | AnyString
-  >;
+  animation?: ConditionalValue<CssProperties['animation'] | AnyString>;
   /**
    * The **`animation-composition`** CSS property specifies the composite operation to use when multiple animations affect the same property simultaneously.
    *
@@ -360,9 +358,7 @@ export interface SystemProperties {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/animation-delay
    */
-  animationDelay?: ConditionalValue<
-    UtilityValues['animationDelay'] | CssVars | CssProperties['animationDelay'] | AnyString
-  >;
+  animationDelay?: ConditionalValue<CssProperties['animationDelay'] | AnyString>;
   /**
    * The **`animation-direction`** CSS property sets whether an animation should play forward, backward, or alternate back and forth between playing the sequence forward and backward.
    *
@@ -392,9 +388,7 @@ export interface SystemProperties {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/animation-duration
    */
-  animationDuration?: ConditionalValue<
-    UtilityValues['animationDuration'] | CssVars | CssProperties['animationDuration'] | AnyString
-  >;
+  animationDuration?: ConditionalValue<CssProperties['animationDuration'] | AnyString>;
   /**
    * The **`animation-fill-mode`** CSS property sets how a CSS animation applies styles to its target before and after its execution.
    *
@@ -439,9 +433,7 @@ export interface SystemProperties {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/animation-name
    */
-  animationName?: ConditionalValue<
-    UtilityValues['animationName'] | CssVars | CssProperties['animationName'] | AnyString
-  >;
+  animationName?: ConditionalValue<CssProperties['animationName'] | AnyString>;
   /**
    * The **`animation-play-state`** CSS property sets whether an animation is running or paused.
    *
@@ -511,12 +503,7 @@ export interface SystemProperties {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/animation-timing-function
    */
-  animationTimingFunction?: ConditionalValue<
-    | UtilityValues['animationTimingFunction']
-    | CssVars
-    | CssProperties['animationTimingFunction']
-    | AnyString
-  >;
+  animationTimingFunction?: ConditionalValue<CssProperties['animationTimingFunction'] | AnyString>;
   /**
    * The **`animation-timeline`** CSS property specifies the timeline that is used to control the progress of an animation.
    *
@@ -559,9 +546,7 @@ export interface SystemProperties {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/aspect-ratio
    */
-  aspectRatio?: ConditionalValue<
-    UtilityValues['aspectRatio'] | CssVars | CssProperties['aspectRatio'] | AnyString
-  >;
+  aspectRatio?: ConditionalValue<CssProperties['aspectRatio'] | AnyString>;
   azimuth?: ConditionalValue<CssProperties['azimuth'] | AnyString>;
   /**
    * The **`backdrop-filter`** CSS property lets you apply graphical effects such as blurring or color shifting to the area behind an element. Because it applies to everything _behind_ the element, to see the effect you must make the element or its background at least partially transparent.
@@ -795,9 +780,7 @@ export interface SystemProperties {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border
    */
-  border?: ConditionalValue<
-    UtilityValues['border'] | CssVars | CssProperties['border'] | AnyString
-  >;
+  border?: ConditionalValue<CssProperties['border'] | AnyString>;
   /**
    * The **`border-block`** CSS property is a shorthand property for setting the individual logical block border property values in a single place in the style sheet.
    *
@@ -809,9 +792,7 @@ export interface SystemProperties {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-block
    */
-  borderBlock?: ConditionalValue<
-    UtilityValues['borderBlock'] | CssVars | CssProperties['borderBlock'] | AnyString
-  >;
+  borderBlock?: ConditionalValue<CssProperties['borderBlock'] | AnyString>;
   /**
    * The **`border-block-color`** CSS property defines the color of the logical block borders of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color` and `border-bottom-color`, or `border-right-color` and `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
@@ -867,9 +848,7 @@ export interface SystemProperties {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-block-end
    */
-  borderBlockEnd?: ConditionalValue<
-    UtilityValues['borderBlockEnd'] | CssVars | CssProperties['borderBlockEnd'] | AnyString
-  >;
+  borderBlockEnd?: ConditionalValue<CssProperties['borderBlockEnd'] | AnyString>;
   /**
    * The **`border-block-end-color`** CSS property defines the color of the logical block-end border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
@@ -930,9 +909,7 @@ export interface SystemProperties {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-block-start
    */
-  borderBlockStart?: ConditionalValue<
-    UtilityValues['borderBlockStart'] | CssVars | CssProperties['borderBlockStart'] | AnyString
-  >;
+  borderBlockStart?: ConditionalValue<CssProperties['borderBlockStart'] | AnyString>;
   /**
    * The **`border-block-start-color`** CSS property defines the color of the logical block-start border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
@@ -993,9 +970,7 @@ export interface SystemProperties {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-bottom
    */
-  borderBottom?: ConditionalValue<
-    UtilityValues['borderBottom'] | CssVars | CssProperties['borderBottom'] | AnyString
-  >;
+  borderBottom?: ConditionalValue<CssProperties['borderBottom'] | AnyString>;
   /**
    * The **`border-bottom-color`** CSS property sets the color of an element's bottom border. It can also be set with the shorthand CSS properties `border-color` or `border-bottom`.
    *
@@ -1237,9 +1212,7 @@ export interface SystemProperties {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-inline
    */
-  borderInline?: ConditionalValue<
-    UtilityValues['borderInline'] | CssVars | CssProperties['borderInline'] | AnyString
-  >;
+  borderInline?: ConditionalValue<CssProperties['borderInline'] | AnyString>;
   /**
    * The **`border-inline-end`** CSS property is a shorthand property for setting the individual logical inline-end border property values in a single place in the style sheet.
    *
@@ -1251,9 +1224,7 @@ export interface SystemProperties {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-inline-end
    */
-  borderInlineEnd?: ConditionalValue<
-    UtilityValues['borderInlineEnd'] | CssVars | CssProperties['borderInlineEnd'] | AnyString
-  >;
+  borderInlineEnd?: ConditionalValue<CssProperties['borderInlineEnd'] | AnyString>;
   /**
    * The **`border-inline-color`** CSS property defines the color of the logical inline borders of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color` and `border-bottom-color`, or `border-right-color` and `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
@@ -1361,9 +1332,7 @@ export interface SystemProperties {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-inline-start
    */
-  borderInlineStart?: ConditionalValue<
-    UtilityValues['borderInlineStart'] | CssVars | CssProperties['borderInlineStart'] | AnyString
-  >;
+  borderInlineStart?: ConditionalValue<CssProperties['borderInlineStart'] | AnyString>;
   /**
    * The **`border-inline-start-color`** CSS property defines the color of the logical inline start border of an element, which maps to a physical border color depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-color`, `border-right-color`, `border-bottom-color`, or `border-left-color` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
@@ -1426,9 +1395,7 @@ export interface SystemProperties {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-left
    */
-  borderLeft?: ConditionalValue<
-    UtilityValues['borderLeft'] | CssVars | CssProperties['borderLeft'] | AnyString
-  >;
+  borderLeft?: ConditionalValue<CssProperties['borderLeft'] | AnyString>;
   /**
    * The **`border-left-color`** CSS property sets the color of an element's left border. It can also be set with the shorthand CSS properties `border-color` or `border-left`.
    *
@@ -1499,9 +1466,7 @@ export interface SystemProperties {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-right
    */
-  borderRight?: ConditionalValue<
-    UtilityValues['borderRight'] | CssVars | CssProperties['borderRight'] | AnyString
-  >;
+  borderRight?: ConditionalValue<CssProperties['borderRight'] | AnyString>;
   /**
    * The **`border-right-color`** CSS property sets the color of an element's right border. It can also be set with the shorthand CSS properties `border-color` or `border-right`.
    *
@@ -1623,9 +1588,7 @@ export interface SystemProperties {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-top
    */
-  borderTop?: ConditionalValue<
-    UtilityValues['borderTop'] | CssVars | CssProperties['borderTop'] | AnyString
-  >;
+  borderTop?: ConditionalValue<CssProperties['borderTop'] | AnyString>;
   /**
    * The **`border-top-color`** CSS property sets the color of an element's top border. It can also be set with the shorthand CSS properties `border-color` or `border-top`.
    *
@@ -1774,9 +1737,7 @@ export interface SystemProperties {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/box-shadow
    */
-  boxShadow?: ConditionalValue<
-    UtilityValues['boxShadow'] | CssVars | CssProperties['boxShadow'] | AnyString
-  >;
+  boxShadow?: ConditionalValue<CssProperties['boxShadow'] | AnyString>;
   /**
    * The **`box-sizing`** CSS property sets how the total width and height of an element is calculated.
    *
@@ -2490,9 +2451,7 @@ export interface SystemProperties {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/font-family
    */
-  fontFamily?: ConditionalValue<
-    UtilityValues['fontFamily'] | CssVars | CssProperties['fontFamily'] | AnyString
-  >;
+  fontFamily?: ConditionalValue<CssProperties['fontFamily'] | AnyString>;
   /**
    * The **`font-feature-settings`** CSS property controls advanced typographic features in OpenType fonts.
    *
@@ -2591,9 +2550,7 @@ export interface SystemProperties {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/font-size
    */
-  fontSize?: ConditionalValue<
-    UtilityValues['fontSize'] | CssVars | CssProperties['fontSize'] | AnyString
-  >;
+  fontSize?: ConditionalValue<CssProperties['fontSize'] | AnyString>;
   /**
    * The **`font-size-adjust`** CSS property sets the size of lower-case letters relative to the current font size (which defines the size of upper-case letters).
    *
@@ -2844,9 +2801,7 @@ export interface SystemProperties {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/font-weight
    */
-  fontWeight?: ConditionalValue<
-    UtilityValues['fontWeight'] | CssVars | CssProperties['fontWeight'] | AnyString
-  >;
+  fontWeight?: ConditionalValue<CssProperties['fontWeight'] | AnyString>;
   /**
    * The **`forced-color-adjust`** CSS property allows authors to opt certain elements out of forced colors mode. This then restores the control of those values to CSS.
    *
@@ -3433,9 +3388,7 @@ export interface SystemProperties {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/letter-spacing
    */
-  letterSpacing?: ConditionalValue<
-    UtilityValues['letterSpacing'] | CssVars | CssProperties['letterSpacing'] | AnyString
-  >;
+  letterSpacing?: ConditionalValue<CssProperties['letterSpacing'] | AnyString>;
   /**
    * The **`line-break`** CSS property sets how to break lines of Chinese, Japanese, or Korean (CJK) text when working with punctuation and symbols.
    *
@@ -3470,9 +3423,7 @@ export interface SystemProperties {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/line-height
    */
-  lineHeight?: ConditionalValue<
-    UtilityValues['lineHeight'] | CssVars | CssProperties['lineHeight'] | AnyString
-  >;
+  lineHeight?: ConditionalValue<CssProperties['lineHeight'] | AnyString>;
   /**
    * The **`line-height-step`** CSS property sets the step unit for line box heights. When the property is set, line box heights are rounded up to the closest multiple of the unit.
    *
@@ -4337,9 +4288,7 @@ export interface SystemProperties {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/outline
    */
-  outline?: ConditionalValue<
-    UtilityValues['outline'] | CssVars | CssProperties['outline'] | AnyString
-  >;
+  outline?: ConditionalValue<CssProperties['outline'] | AnyString>;
   /**
    * The **`outline-color`** CSS property sets the color of an element's outline.
    *
@@ -5116,9 +5065,7 @@ export interface SystemProperties {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scrollbar-width
    */
-  scrollbarWidth?: ConditionalValue<
-    UtilityValues['scrollbarWidth'] | CssVars | CssProperties['scrollbarWidth'] | AnyString
-  >;
+  scrollbarWidth?: ConditionalValue<CssProperties['scrollbarWidth'] | AnyString>;
   /**
    * The **`scroll-behavior`** CSS property sets the behavior for a scrolling box when scrolling is triggered by the navigation or CSSOM scrolling APIs.
    *
@@ -5964,9 +5911,7 @@ export interface SystemProperties {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/text-shadow
    */
-  textShadow?: ConditionalValue<
-    UtilityValues['textShadow'] | CssVars | CssProperties['textShadow'] | AnyString
-  >;
+  textShadow?: ConditionalValue<CssProperties['textShadow'] | AnyString>;
   /**
    * The **`text-size-adjust`** CSS property controls the text inflation algorithm used on some smartphones and tablets. Other browsers will ignore this property.
    *
@@ -6185,9 +6130,7 @@ export interface SystemProperties {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/transition-delay
    */
-  transitionDelay?: ConditionalValue<
-    UtilityValues['transitionDelay'] | CssVars | CssProperties['transitionDelay'] | AnyString
-  >;
+  transitionDelay?: ConditionalValue<CssProperties['transitionDelay'] | AnyString>;
   /**
    * The **`transition-duration`** CSS property sets the length of time a transition animation should take to complete. By default, the value is `0s`, meaning that no animation will occur.
    *
@@ -6202,9 +6145,7 @@ export interface SystemProperties {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/transition-duration
    */
-  transitionDuration?: ConditionalValue<
-    UtilityValues['transitionDuration'] | CssVars | CssProperties['transitionDuration'] | AnyString
-  >;
+  transitionDuration?: ConditionalValue<CssProperties['transitionDuration'] | AnyString>;
   /**
    * The **`transition-property`** CSS property sets the CSS properties to which a transition effect should be applied.
    *
@@ -6235,10 +6176,7 @@ export interface SystemProperties {
    * @see https://developer.mozilla.org/docs/Web/CSS/transition-timing-function
    */
   transitionTimingFunction?: ConditionalValue<
-    | UtilityValues['transitionTimingFunction']
-    | CssVars
-    | CssProperties['transitionTimingFunction']
-    | AnyString
+    CssProperties['transitionTimingFunction'] | AnyString
   >;
   /**
    * The **`translate`** CSS property allows you to specify translation transforms individually and independently of the `transform` property. This maps better to typical user interface usage, and saves having to remember the exact order of transform functions to specify in the `transform` value.
@@ -7130,9 +7068,7 @@ export interface SystemProperties {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/outline
    */
-  ring?: ConditionalValue<
-    UtilityValues['outline'] | CssVars | CssProperties['outline'] | AnyString
-  >;
+  ring?: ConditionalValue<CssProperties['outline'] | AnyString>;
   /**
    * The **`outline-offset`** CSS property sets the amount of space between an outline and the edge or border of an element.
    *
@@ -7600,9 +7536,7 @@ export interface SystemProperties {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-inline
    */
-  borderX?: ConditionalValue<
-    UtilityValues['borderInline'] | CssVars | CssProperties['borderInline'] | AnyString
-  >;
+  borderX?: ConditionalValue<CssProperties['borderInline'] | AnyString>;
   /**
    * The **`border-inline-width`** CSS property defines the width of the logical inline borders of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width` and `border-bottom-width`, or `border-left-width`, and `border-right-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
@@ -7644,9 +7578,7 @@ export interface SystemProperties {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-block
    */
-  borderY?: ConditionalValue<
-    UtilityValues['borderBlock'] | CssVars | CssProperties['borderBlock'] | AnyString
-  >;
+  borderY?: ConditionalValue<CssProperties['borderBlock'] | AnyString>;
   /**
    * The **`border-block-width`** CSS property defines the width of the logical block borders of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width` and `border-bottom-width`, or `border-left-width`, and `border-right-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
@@ -7688,9 +7620,7 @@ export interface SystemProperties {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-inline-start
    */
-  borderStart?: ConditionalValue<
-    UtilityValues['borderInlineStart'] | CssVars | CssProperties['borderInlineStart'] | AnyString
-  >;
+  borderStart?: ConditionalValue<CssProperties['borderInlineStart'] | AnyString>;
   /**
    * The **`border-inline-start-width`** CSS property defines the width of the logical inline-start border of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width`, `border-right-width`, `border-bottom-width`, or `border-left-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
@@ -7736,9 +7666,7 @@ export interface SystemProperties {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-inline-end
    */
-  borderEnd?: ConditionalValue<
-    UtilityValues['borderInlineEnd'] | CssVars | CssProperties['borderInlineEnd'] | AnyString
-  >;
+  borderEnd?: ConditionalValue<CssProperties['borderInlineEnd'] | AnyString>;
   /**
    * The **`border-inline-end-width`** CSS property defines the width of the logical inline-end border of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width`, `border-right-width`, `border-bottom-width`, or `border-left-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
@@ -7788,9 +7716,7 @@ export interface SystemProperties {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/box-shadow
    */
-  shadow?: ConditionalValue<
-    UtilityValues['boxShadow'] | CssVars | CssProperties['boxShadow'] | AnyString
-  >;
+  shadow?: ConditionalValue<CssProperties['boxShadow'] | AnyString>;
   shadowColor?: ConditionalValue<UtilityValues['boxShadowColor'] | CssVars | AnyString>;
   x?: ConditionalValue<UtilityValues['translateX'] | CssVars | AnyString>;
   y?: ConditionalValue<UtilityValues['translateY'] | CssVars | AnyString>;
@@ -7854,8 +7780,8 @@ export interface SystemProperties {
     | CssProperties['scrollPaddingInline']
     | AnyString
   >;
-  hideFrom?: ConditionalValue<UtilityValues['hideFrom'] | CssVars | AnyString>;
-  hideBelow?: ConditionalValue<UtilityValues['hideBelow'] | CssVars | AnyString>;
+  hideFrom?: ConditionalValue<string | number | AnyString>;
+  hideBelow?: ConditionalValue<string | number | AnyString>;
   spaceX?: ConditionalValue<UtilityValues['spaceX'] | CssVars | AnyString>;
   spaceY?: ConditionalValue<UtilityValues['spaceY'] | CssVars | AnyString>;
   divideX?: ConditionalValue<string | number | AnyString>;
@@ -7887,8 +7813,8 @@ export interface SystemProperties {
   saturate?: ConditionalValue<string | number | AnyString>;
   sepia?: ConditionalValue<string | number | AnyString>;
   dropShadow?: ConditionalValue<string | number | AnyString>;
-  blur?: ConditionalValue<UtilityValues['blur'] | CssVars | AnyString>;
-  backdropBlur?: ConditionalValue<UtilityValues['backdropBlur'] | CssVars | AnyString>;
+  blur?: ConditionalValue<string | number | AnyString>;
+  backdropBlur?: ConditionalValue<string | number | AnyString>;
   backdropBrightness?: ConditionalValue<string | number | AnyString>;
   backdropContrast?: ConditionalValue<string | number | AnyString>;
   backdropGrayscale?: ConditionalValue<string | number | AnyString>;

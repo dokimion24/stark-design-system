@@ -1,7 +1,11 @@
 export const none = '0rem';
+export const xxs = '0.125rem';
 export const xs = '0.25rem';
-export const sm = '0.5rem';
-export const md = '0.375rem';
+export const sm = '0.375rem';
+export const md = '0.5rem';
 export const lg = '0.625rem';
 export const xl = '0.75rem';
-export const full = '2.5rem';
+export const xl2 = '1rem';
+export const xl3 = '1.25rem';
+export const xl4 = '1.5rem';
+export const full = '62.5rem';

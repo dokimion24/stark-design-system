@@ -4,6 +4,7 @@
     "build": "turbo run build",
     "tokens:build": "turbo run build --filter=starkds-tokens",
     "ui:build": "turbo run build --filter=starkds-ui",
+    "storybook": "cd packages/stark-ui && storybook dev -p 6006",
     "icons:build": "turbo run build --filter=starkds-icons",
     "dev": "turbo run dev",
     "lint": "turbo run lint",
@@ -11,10 +12,9 @@
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "changeset": "changeset",
     "version-packages": "changeset version",
-    "release": "turbo run build --filter=docs^... && changeset publish",
+    "release": "changeset publish",
     "prepare": "husky",
-    "stark-ui:codegen": "cd packages/wow-stark && pnpm panda codegen",
-    "stark-docs:codegen": "cd apps/wow-stark && pnpm panda codegen"
+    "stark-ui:codegen": "cd packages/stark-ui && pnpm panda codegen"
   },
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx}": [

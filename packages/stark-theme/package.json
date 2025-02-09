@@ -1,6 +1,6 @@
 {
   "name": "starkds-theme",
-  "version": "0.1.0",
+  "version": "0.0.3",
   "repository": {
     "type": "git",
     "directory": "packages/stark-theme"

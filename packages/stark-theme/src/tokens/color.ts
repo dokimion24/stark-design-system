@@ -2,20 +2,19 @@ import { defineSemanticTokens, defineTokens } from '@pandacss/dev';
 import { color } from 'starkds-tokens';
 
 export const colors = defineTokens.colors({
-  gray: {
-    50: { value: color.gray50 },
-    100: { value: color.gray100 },
-    200: { value: color.gray200 },
-    300: { value: color.gray300 },
-    400: { value: color.gray400 },
-    500: { value: color.gray500 },
-    600: { value: color.gray600 },
-    700: { value: color.gray700 },
-    800: { value: color.gray800 },
-    900: { value: color.gray900 },
+  grayNeural: {
+    50: { value: color.grayNeutral50 },
+    100: { value: color.grayNeutral100 },
+    200: { value: color.grayNeutral200 },
+    300: { value: color.grayNeutral300 },
+    400: { value: color.grayNeutral400 },
+    500: { value: color.grayNeutral500 },
+    600: { value: color.grayNeutral600 },
+    700: { value: color.grayNeutral700 },
+    800: { value: color.grayNeutral800 },
+    900: { value: color.grayNeutral900 },
   },
   grayDark: {
-    50: { value: color.grayDark50 },
     100: { value: color.grayDark100 },
     200: { value: color.grayDark200 },
     300: { value: color.grayDark300 },
@@ -68,17 +67,27 @@ export const colors = defineTokens.colors({
 
 export const semanticTokens = defineSemanticTokens({
   colors: {
+    textWhite: { value: color.textWhite },
+    textBlack: { value: color.textBlack },
+
     primary: { value: color.primary },
+    primaryHoverBackground: { value: color.primaryHoverBackground },
+    primaryBorder: { value: color.primaryBorder },
+
+    secondary: { value: color.secondary },
+    secondaryHoverBackground: { value: color.secondaryHoverBackground },
+    secondaryBorder: { value: color.secondaryBorder },
+
+    outlineHoverBackground: { value: color.outlineHoverBackground },
+
+    disabledBackground: { value: color.disabledBackground },
+    disabledText: { value: color.disabledText },
+    disabledBorder: { value: color.disabledBorder },
     success: { value: color.success },
     error: { value: color.error },
     backgroundNormal: { value: color.backgroundNormal },
     backgroundDimmer: { value: color.backgroundDimmer },
     errorBackground: { value: color.errorBackground },
-    blueDisabled: { value: color.blueDisabled },
-    blueHover: { value: color.blueHover },
-    bluePressed: { value: color.bluePressed },
-    shadowSmall: { value: color.shadowSmall },
-    shadowMedium: { value: color.shadowMedium },
   },
 });
 

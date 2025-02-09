@@ -10,7 +10,18 @@ export const gray700 = '#374151';
 export const gray800 = '#1F2937';
 export const gray900 = '#111827';
 
-export const grayDark50 = '#FAFAFA';
+export const grayNeutral50 = '#F9FAFB';
+export const grayNeutral100 = '#F3F4F6';
+export const grayNeutral200 = '#E5E7EB';
+export const grayNeutral300 = '#D2D6DB';
+export const grayNeutral400 = '#9DA4AE';
+export const grayNeutral500 = '#6C737F';
+export const grayNeutral600 = '#4D5761';
+export const grayNeutral700 = '#384250';
+export const grayNeutral800 = '#1F2A37';
+export const grayNeutral900 = '#111927';
+
+export const grayNeturalDark50 = '#FAFAFA';
 export const grayDark100 = '#F0F1F1';
 export const grayDark200 = '#ECECEC';
 export const grayDark300 = '#CECECE';
@@ -43,16 +54,16 @@ export const yellow700 = '#B54708';
 export const yellow800 = '#93370D';
 export const yellow900 = '#7A2E0E';
 
-export const blue50 = '#F6FEF9';
-export const blue100 = '#EDFCF2';
-export const blue200 = '#D3F8DF';
-export const blue300 = '#AAF0C1';
-export const blue400 = '#73E2A3';
-export const blue500 = '#4CC38A';
-export const blue600 = '#30A46C';
-export const blue700 = '#21845A';
-export const blue800 = '#067647';
-export const blue900 = '#05603B';
+export const blue50 = '#EFF8FF';
+export const blue100 = '#D1E9FF';
+export const blue200 = '#B2DDFF';
+export const blue300 = '#84CAFF';
+export const blue400 = '#53B1FD';
+export const blue500 = '#2E90FA';
+export const blue600 = '#1570EF';
+export const blue700 = '#175CD3';
+export const blue800 = '#1849A9';
+export const blue900 = '#194185';
 
 export const white = '#FFFFFF';
 export const black = '#000000';
@@ -68,7 +79,21 @@ export const blackOpacity60 = 'rgba(0, 0, 0, 0.6)';
 export const blackOpacity80 = 'rgba(0, 0, 0, 0.8)';
 
 // 시맨틱 토큰
-export const primary = blue500;
+export const textWhite = white;
+export const textBlack = grayNeutral700;
+
+export const primary = grayNeutral900;
+export const primaryHoverBackground = grayNeutral800;
+export const primaryBorder = whiteOpacity20;
+
+export const secondary = blue500;
+export const secondaryHoverBackground = blue300;
+export const secondaryBorder = blue400;
+
+export const outlineHoverBackground = grayNeutral50;
+
+export const border = grayNeutral300;
+
 export const success = blue600;
 export const error = red600;
 
@@ -76,15 +101,12 @@ export const backgroundNormal = white;
 export const backgroundDimmer = blackOpacity80;
 export const errorBackground = red100;
 
-export const blueDisabled = blue100;
-export const textBlueDisabled = blue200;
-
-export const blueHover = blue600;
-export const elevatedHover = 'rgba(16, 43, 74, 0.2)';
+export const disabledBackground = '#EAECF0';
+export const disabledText = grayNeutral400;
+export const disabledBorder = grayNeutral300;
 
 export const bluePressed = blue400;
 export const blueBackgroundPressed = blue50;
 
-export const shadowSmall = 'rgba(0, 0, 0, 0.1)';
-export const shadowMedium = blackOpacity20;
-export const blueShadow = 'rgba(16, 43, 74, 0.2)';
+export const shadowXs = 'rgba(16, 24, 40, 0.05)';
+export const skeuomorphicShadow = 'rgba(16, 24, 40, 0.18)';

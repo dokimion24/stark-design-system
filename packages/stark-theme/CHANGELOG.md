@@ -1,7 +1,13 @@
 # starkds-theme
 
-## 0.1.0
+## 0.0.3
 
-### Minor Changes
+### Patch Changes
+
+- b588b85: Add token
+
+## 0.0.2
+
+### Patch Changes
 
 - 02c38e3: Initial release of starkds
