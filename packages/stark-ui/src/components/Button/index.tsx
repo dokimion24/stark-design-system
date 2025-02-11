@@ -26,7 +26,7 @@ type ButtonComponent = <C extends ElementType = 'button'>(
   props: PolymorphicButtonProps<C>,
 ) => ReactNode;
 
-const Button: ButtonComponent & { displayName?: string } = forwardRef(
+export const Button: ButtonComponent & { displayName?: string } = forwardRef(
   <C extends ElementType = 'button'>(
     {
       as,
@@ -37,7 +37,7 @@ const Button: ButtonComponent & { displayName?: string } = forwardRef(
       icon,
       ...props
     }: PolymorphicButtonProps<C>,
-    ref?: PolymorphicRef<C>,
+    ref: PolymorphicRef<C>,
   ) => {
     const Component = as || 'button';
 
@@ -176,4 +176,3 @@ const ContentStyle = cva({
 });
 
 Button.displayName = 'Button';
-export default Button;
