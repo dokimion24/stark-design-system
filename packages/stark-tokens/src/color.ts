@@ -94,7 +94,7 @@ export const backgroundNormal = white;
 export const backgroundDimmer = blackOpacity80;
 export const errorBackground = red100;
 
-export const disabledBackground = '#EAECF0';
+export const disabledBackground = grayNeutral50;
 export const disabledText = grayNeutral400;
 export const disabledBorder = grayNeutral300;
 
