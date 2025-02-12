@@ -2,7 +2,7 @@
 
 import { cva } from '@styled-system/css';
 import { Flex, styled } from '@styled-system/jsx';
-import { forwardRef, useState } from 'react';
+import { forwardRef, useId, useState } from 'react';
 import { Check, Minus } from 'starkds-icons';
 
 import type { CheckboxProps } from './types';
@@ -29,7 +29,7 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(function Che
     typeof checked === 'boolean' ? checked : checked === 'checked' || checked === 'unchecked';
   const isIntermediate: boolean = checked === 'intermediate';
 
-  const id = `checkbox_${name}`;
+  const id = useId();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     let newValue: CheckboxProps['checked'];
