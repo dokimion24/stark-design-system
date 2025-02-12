@@ -13,7 +13,6 @@ export type DropdownTypes<T extends string = DefaultDropdownValue> = {
   expanded: boolean;
   disabled: boolean;
   multiple: boolean;
-  size: 'md' | 'lg';
 };
 
 export type DropdownProps<T extends string = DefaultDropdownValue> = {
@@ -22,7 +21,6 @@ export type DropdownProps<T extends string = DefaultDropdownValue> = {
   multiple?: boolean;
   isOpen?: boolean;
   onClose?: () => void;
-  size: 'md' | 'lg';
 } & Children;
 
 export type DropdownBarProps<T extends string = DefaultDropdownValue> = {

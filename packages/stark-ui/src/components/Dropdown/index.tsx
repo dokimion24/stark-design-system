@@ -30,14 +30,7 @@ import type {
 const DropdownContext = createContext<
   Pick<
     DropdownTypes<never>,
-    | 'container'
-    | 'triggerRef'
-    | 'optionListRef'
-    | 'expanded'
-    | 'disabled'
-    | 'close'
-    | 'onChange'
-    | 'size'
+    'container' | 'triggerRef' | 'optionListRef' | 'expanded' | 'disabled' | 'close' | 'onChange'
   >
 >({
   container: null,
@@ -47,7 +40,6 @@ const DropdownContext = createContext<
   disabled: false,
   close: () => null,
   onChange: () => null,
-  size: 'md',
 });
 
 export const Dropdown = <T extends string = DefaultDropdownValue>({
@@ -56,7 +48,7 @@ export const Dropdown = <T extends string = DefaultDropdownValue>({
   disabled = false,
   multiple = false,
   isOpen,
-  size = 'md',
+
   onClose,
 }: DropdownProps<T>) => {
   const triggerRef = useRef<HTMLElement>(null);
@@ -105,7 +97,6 @@ export const Dropdown = <T extends string = DefaultDropdownValue>({
           | 'disabled'
           | 'close'
           | 'onChange'
-          | 'size'
         >
       }
     >
@@ -127,7 +118,7 @@ const DropdownTrigger = ({ children }: { children: React.ReactElement }) => {
 
 const DropdownBar = forwardRef(
   (
-    { value, placeholder, disabled = false, ...props }: DropdownBarProps,
+    { value, placeholder = '선택하세요.', disabled = false, ...props }: DropdownBarProps,
     ref: ForwardedRef<HTMLDivElement>,
   ) => {
     console.log(props);
