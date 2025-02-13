@@ -29,80 +29,32 @@ const meta: Meta<typeof Button> = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-/**
- * 기본(Default) 스토리
- * Docs 탭에서는 이 스토리만 보여집니다.
- */
-export const Default: Story = {
-  args: {
-    children: '버튼',
-    size: 'lg',
-    variant: 'primary',
-  },
-};
-
 const sizes: Array<'sm' | 'md' | 'lg' | 'xl' | '2xl'> = ['sm', 'md', 'lg', 'xl', '2xl'];
 
-export const Primary: Story = {
-  name: 'Primary Button',
-  render: () => (
-    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', padding: '1rem' }}>
-      {sizes.map((size) => (
-        <Button key={size} size={size} variant="primary">
-          {`Primary ${size}`}
-        </Button>
-      ))}
-    </div>
-  ),
-  parameters: {
-    docs: { disable: true },
-  },
-};
-
-export const Secondary: Story = {
-  name: 'Secondary Button',
-  render: () => (
-    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', padding: '1rem' }}>
-      {sizes.map((size) => (
-        <Button key={size} size={size} variant="secondary">
-          {`Secondary ${size}`}
-        </Button>
-      ))}
-    </div>
-  ),
-  parameters: {
-    docs: { disable: true },
-  },
-};
-
-export const Outline: Story = {
-  name: 'Outline Button',
-  render: () => (
-    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', padding: '1rem' }}>
-      {sizes.map((size) => (
-        <Button key={size} size={size} variant="outline">
-          {`Outline ${size}`}
-        </Button>
-      ))}
-    </div>
-  ),
-  parameters: {
-    docs: { disable: true },
-  },
-};
-
-export const Ghost: Story = {
-  name: 'Ghost Button',
-  render: () => (
-    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', padding: '1rem' }}>
-      {sizes.map((size) => (
-        <Button key={size} size={size} variant="ghost">
-          {`Ghost ${size}`}
-        </Button>
-      ))}
-    </div>
-  ),
-  parameters: {
-    docs: { disable: true },
+export const Group: Story = {
+  name: 'Group',
+  render: () => {
+    const variants: Array<'primary' | 'secondary' | 'outline' | 'ghost'> = [
+      'primary',
+      'secondary',
+      'outline',
+      'ghost',
+    ];
+    return (
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem', padding: '1rem' }}>
+        {variants.map((variant) => (
+          <div
+            key={variant}
+            style={{ display: 'flex', gap: '1rem', alignItems: 'center', flexWrap: 'wrap' }}
+          >
+            {sizes.map((size) => (
+              <Button key={`${variant}-${size}`} size={size} variant={variant}>
+                {`${variant.charAt(0).toUpperCase()}${variant.slice(1)} ${size}`}
+              </Button>
+            ))}
+          </div>
+        ))}
+      </div>
+    );
   },
 };
