@@ -1,7 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { useState } from 'react';
 
+import { Checkbox } from '../Checkbox';
 import { Dropdown } from '.';
+import type { DropdownChangeEvent } from './types';
 
 const meta: Meta<typeof Dropdown> = {
   title: 'Components/Dropdown',
@@ -48,7 +50,7 @@ export const Default: Story = {
         }}
       >
         <Dropdown.Trigger>
-          <Dropdown.Bar placeholder="선택하세요." value={selectedValue} />
+          <Dropdown.Bar value={selectedValue} />
         </Dropdown.Trigger>
         <Dropdown.OptionList>
           {options.map((value) => (
@@ -65,5 +67,44 @@ export const Default: Story = {
   },
   parameters: {
     docs: { disable: false },
+  },
+};
+
+export const MultipleWithCheckbox: Story = {
+  render: (args) => {
+    const [selectedValues, setSelectedValues] = useState<string[]>([]);
+
+    const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>, option: string) => {
+      let newSelected: string[];
+      if (selectedValues.includes(option)) {
+        newSelected = selectedValues.filter((v) => v !== option);
+      } else {
+        newSelected = [...selectedValues, option];
+      }
+      setSelectedValues(newSelected);
+
+      args.onChange?.(e as unknown as DropdownChangeEvent, option);
+    };
+
+    return (
+      <Dropdown {...args} multiple={true} onClose={args.onClose}>
+        <Dropdown.Trigger>
+          <Dropdown.Bar value={selectedValues.join(', ') || ''} />
+        </Dropdown.Trigger>
+        <Dropdown.OptionList>
+          {options.map((option) => (
+            <div key={option} style={{ padding: '0.75rem 0.5rem' }}>
+              <Checkbox
+                checked={selectedValues.includes(option) ? 'checked' : false}
+                name={option}
+                onChange={(e) => handleCheckboxChange(e, option)}
+              >
+                {option}
+              </Checkbox>
+            </div>
+          ))}
+        </Dropdown.OptionList>
+      </Dropdown>
+    );
   },
 };
