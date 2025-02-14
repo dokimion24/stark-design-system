@@ -30,7 +30,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
 const Label = styled('label', {
   base: {
     textStyle: 'textSmRegular',
-    color: 'blue.600',
+    color: 'textBlack',
     mb: '4px',
   },
 });
@@ -45,24 +45,27 @@ const InputWrapper = styled('div', {
 const StyledInput = styled('input', {
   base: {
     width: '100%',
-    padding: '8px',
+    textStyle: 'textLgRegular',
+    px: 'lg',
+    py: 'md',
     border: '1px solid',
-    borderColor: 'gray.300',
+    borderColor: 'border',
     borderRadius: '4px',
     fontSize: 'md',
     '&:focus': {
-      outline: 'none',
-      borderColor: 'blue.600',
+      borderColor: 'focusBorder',
     },
     '&:disabled': {
-      backgroundColor: 'gray.100',
+      backgroundColor: 'disabledBackground',
+      borderColor: 'disabledBorder',
+      color: 'disabledText',
       cursor: 'not-allowed',
     },
   },
   variants: {
     error: {
       true: {
-        borderColor: 'red.500',
+        borderColor: 'error',
       },
     },
   },
@@ -84,13 +87,12 @@ const IconWrapper = styled('div', {
 
 const HelperText = styled('p', {
   base: {
-    fontSize: 'sm',
-    mt: '4px',
+    textStyle: 'textSmMedium',
   },
   variants: {
     error: {
       true: {
-        color: 'red.500',
+        color: 'error',
       },
       false: {
         color: 'gray.500',
