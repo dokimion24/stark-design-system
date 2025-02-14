@@ -62,6 +62,7 @@ export type ColorToken =
   | 'disabledBackground'
   | 'disabledText'
   | 'disabledBorder'
+  | 'captionColor'
   | 'textWhite'
   | 'textBlack'
   | 'primary'
@@ -79,6 +80,8 @@ export type ColorToken =
   | 'error'
   | 'backgroundNormal'
   | 'backgroundDimmer'
+  | 'backgroundInActive'
+  | 'backgroundActive'
   | 'errorBackground'
   | 'shadowXs'
   | 'skeuomorphicShadow';

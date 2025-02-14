@@ -102,10 +102,13 @@ export const semanticTokens = defineSemanticTokens({
     disabledBackground: { value: color.disabledBackground },
     disabledText: { value: color.disabledText },
     disabledBorder: { value: color.disabledBorder },
+    captionColor: { value: color.captionColor },
     success: { value: color.success },
     error: { value: color.error },
     backgroundNormal: { value: color.backgroundNormal },
     backgroundDimmer: { value: color.backgroundDimmer },
+    backgroundInActive: { value: color.backgroundInActive },
+    backgroundActive: { value: color.backgroundActive },
     errorBackground: { value: color.errorBackground },
 
     shadowXs: { value: color.shadowXs },

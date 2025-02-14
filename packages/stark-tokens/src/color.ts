@@ -92,11 +92,18 @@ export const error = red600;
 
 export const backgroundNormal = white;
 export const backgroundDimmer = blackOpacity80;
+export const backgroundInActive = grayNeutral100;
+export const backgroundActive = blue500;
 export const errorBackground = red100;
+
+export const unpressed = grayNeutral100;
+export const pressed = blue500;
 
 export const disabledBackground = grayNeutral50;
 export const disabledText = grayNeutral400;
 export const disabledBorder = grayNeutral300;
+
+export const captionColor = grayNeutral600;
 
 export const shadowXs = 'rgba(16, 24, 40, 0.05)';
 export const skeuomorphicShadow = 'rgba(16, 24, 40, 0.18)';

@@ -71,6 +71,8 @@ export const colorTokenList = [
   'disabledText',
   'disabledBorder',
 
+  'captionColor',
+
   'textWhite',
   'textBlack',
 
@@ -94,6 +96,8 @@ export const colorTokenList = [
 
   'backgroundNormal',
   'backgroundDimmer',
+  'backgroundInActive',
+  'backgroundActive',
   'errorBackground',
 
   'shadowXs',
