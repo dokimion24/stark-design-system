@@ -4,7 +4,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import React, { useState } from 'react';
 import { Check } from 'starkds-icons';
 
-import { Input } from './index.stories';
+import { Input } from '.';
 
 const meta: Meta<typeof Input> = {
   title: 'Components/Input',
@@ -30,10 +30,11 @@ type InputConfig = {
   error?: boolean;
   helperText?: string;
   rightIcon?: React.ReactElement;
+  disabled?: boolean;
 };
 
 const InputWrapper = (props: { config: InputConfig }) => {
-  const { name, label, initial, controlled, error, helperText, rightIcon } = props.config;
+  const { name, label, initial, controlled, error, helperText, rightIcon, disabled } = props.config;
   if (controlled) {
     const [value, setValue] = useState(initial);
 
@@ -43,6 +44,7 @@ const InputWrapper = (props: { config: InputConfig }) => {
 
     return (
       <Input
+        disabled={disabled}
         error={error}
         helperText={helperText}
         label={label}
@@ -81,7 +83,7 @@ export const Group: Story = {
         initial: 'Error Input',
         controlled: true,
         error: true,
-        helperText: 'This is an error message',
+        helperText: '에러가 발생했습니다.',
       },
       {
         name: 'input3',
@@ -102,6 +104,13 @@ export const Group: Story = {
         initial: 'Search term',
         controlled: true,
         rightIcon: <Check stroke="black" />,
+      },
+      {
+        name: 'input6',
+        label: 'disabled',
+        initial: 'Search term',
+        controlled: true,
+        disabled: true,
       },
     ];
 
