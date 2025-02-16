@@ -8,4 +8,5 @@ export { default as Home01 } from './Home01.tsx';
 export { default as Link01 } from './Link01.tsx';
 export { default as Minus } from './Minus.tsx';
 export { default as Share01 } from './Share01.tsx';
+export { default as User } from './User.tsx';
 export { default as XClose } from './XClose.tsx';
