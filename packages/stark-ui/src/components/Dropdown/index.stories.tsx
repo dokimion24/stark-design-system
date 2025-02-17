@@ -3,18 +3,46 @@ import { useState } from 'react';
 
 import { Checkbox } from '../Checkbox';
 import { Dropdown } from '.';
-import type { DropdownChangeEvent } from './types';
+import type { DropdownChangeEvent, DropdownProps } from './types';
 
 const meta: Meta<typeof Dropdown> = {
   title: 'Components/Dropdown',
   component: Dropdown,
+  parameters: {
+    layout: 'centered',
+    docs: {
+      description: {
+        component: '드롭다운은 여러 옵션 중 하나 또는 여러 개를 선택할 수 있는 컴포넌트입니다.',
+      },
+    },
+  },
   tags: ['autodocs'],
   argTypes: {
-    disabled: { control: 'boolean', defaultValue: false },
-    multiple: { control: 'boolean', defaultValue: false },
-    isOpen: { control: 'boolean', defaultValue: false },
-    onChange: { action: 'changed' },
-    onClose: { action: 'closed' },
+    disabled: {
+      control: 'boolean',
+      description: '드롭다운의 비활성화 상태를 지정합니다.',
+    },
+    multiple: {
+      control: 'boolean',
+      description: '다중 선택 가능 여부를 지정합니다.',
+    },
+    isOpen: {
+      control: 'boolean',
+      description: '드롭다운의 열림/닫힘 상태를 제어합니다.',
+    },
+    onChange: {
+      action: 'changed',
+      description: '선택된 값이 변경될 때 호출되는 함수입니다.',
+      table: {
+        type: {
+          summary: '(e: DropdownChangeEvent, value: string) => void',
+        },
+      },
+    },
+    onClose: {
+      action: 'closed',
+      description: '드롭다운이 닫힐 때 호출되는 함수입니다.',
+    },
   },
 };
 
@@ -34,19 +62,16 @@ const options = [
   '유아동/출산',
 ];
 
-export const Default: Story = {
-  render: (args) => {
-    const [selectedValue, setSelectedValue] = useState('');
+const BasicDropdown = (props: Partial<DropdownProps>) => {
+  const [selectedValue, setSelectedValue] = useState('');
 
-    return (
+  return (
+    <div style={{ width: '320px' }}>
       <Dropdown
-        disabled={args.disabled}
-        isOpen={args.isOpen}
-        multiple={args.multiple}
-        onClose={args.onClose}
+        {...props}
         onChange={(e, value) => {
           setSelectedValue(value);
-          console.log('Changed:', value);
+          props.onChange?.(e, value);
         }}
       >
         <Dropdown.Trigger>
@@ -63,39 +88,74 @@ export const Default: Story = {
           ))}
         </Dropdown.OptionList>
       </Dropdown>
-    );
+    </div>
+  );
+};
+
+export const Default: Story = {
+  args: {
+    disabled: false,
+    multiple: false,
   },
+  render: (args) => <BasicDropdown {...args} />,
   parameters: {
-    docs: { disable: false },
+    docs: {
+      description: {
+        story: '기본적인 드롭다운 컴포넌트입니다. 단일 선택이 가능합니다.',
+      },
+    },
   },
 };
 
-export const MultipleWithCheckbox: Story = {
-  render: (args) => {
-    const [selectedValues, setSelectedValues] = useState<string[]>([]);
+export const Disabled: Story = {
+  args: {
+    disabled: true,
+  },
+  render: (args) => <BasicDropdown {...args} />,
+  parameters: {
+    docs: {
+      description: {
+        story: '비활성화된 상태의 드롭다운입니다.',
+      },
+    },
+  },
+};
 
-    const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>, option: string) => {
-      let newSelected: string[];
-      if (selectedValues.includes(option)) {
-        newSelected = selectedValues.filter((v) => v !== option);
-      } else {
-        newSelected = [...selectedValues, option];
-      }
-      setSelectedValues(newSelected);
+const MultipleDropdown = (props: Partial<DropdownProps>) => {
+  const [selectedValues, setSelectedValues] = useState<string[]>([]);
 
-      args.onChange?.(e as unknown as DropdownChangeEvent, option);
-    };
+  const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>, option: string) => {
+    const newSelected = selectedValues.includes(option)
+      ? selectedValues.filter((v) => v !== option)
+      : [...selectedValues, option];
+    setSelectedValues(newSelected);
+    props.onChange?.(e as unknown as DropdownChangeEvent, option);
+  };
 
-    return (
-      <Dropdown {...args} multiple={true} onClose={args.onClose}>
+  return (
+    <div style={{ width: '320px' }}>
+      <Dropdown
+        {...props}
+        multiple
+        onClose={props.onClose}
+        onChange={
+          props.onChange ||
+          ((e, value) => {
+            console.log(e, value);
+          })
+        }
+      >
         <Dropdown.Trigger>
-          <Dropdown.Bar value={selectedValues.join(', ') || ''} />
+          <Dropdown.Bar
+            placeholder="선택하세요"
+            value={selectedValues.length > 0 ? selectedValues.join(', ') : ''}
+          />
         </Dropdown.Trigger>
         <Dropdown.OptionList>
           {options.map((option) => (
             <div key={option} style={{ padding: '0.75rem 0.5rem' }}>
               <Checkbox
-                checked={selectedValues.includes(option) ? 'checked' : false}
+                checked={selectedValues.includes(option)}
                 name={option}
                 onChange={(e) => handleCheckboxChange(e, option)}
               >
@@ -105,6 +165,48 @@ export const MultipleWithCheckbox: Story = {
           ))}
         </Dropdown.OptionList>
       </Dropdown>
+    </div>
+  );
+};
+
+export const Multiple: Story = {
+  args: {
+    multiple: true,
+  },
+  render: (args) => <MultipleDropdown {...args} />,
+  parameters: {
+    docs: {
+      description: {
+        story: '체크박스를 사용하여 여러 항목을 선택할 수 있는 드롭다운입니다.',
+      },
+    },
+  },
+};
+
+export const Group: Story = {
+  render: () => {
+    const examples = [
+      { title: '기본', props: {} },
+      { title: '비활성화', props: { disabled: true } },
+    ];
+
+    return (
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem', padding: '1rem' }}>
+        {examples.map(({ title, props }) => (
+          <div key={title}>
+            <h3 style={{ marginBottom: '1rem' }}>{title}</h3>
+            <BasicDropdown {...props} />
+          </div>
+        ))}
+      </div>
     );
+  },
+  parameters: {
+    docs: {
+      description: {
+        story: '드롭다운의 모든 상태를 한눈에 볼 수 있는 그룹입니다.',
+      },
+      primary: true,
+    },
   },
 };
