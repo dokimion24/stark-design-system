@@ -66,7 +66,11 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(function Che
           type="checkbox"
           className={CheckboxStyle({
             type: disabled
-              ? 'disabled'
+              ? isIntermediate
+                ? 'intermediate-disabled'
+                : isChecked
+                  ? 'checked-disabled'
+                  : 'disabled'
               : isIntermediate
                 ? 'intermediate'
                 : isChecked
@@ -78,12 +82,12 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(function Che
         />
         {isChecked && (
           <styled.div left="50%" position="absolute" top="50%" transform="translate(-50%, -50%)">
-            <Check height={16} stroke="white" width={16} />
+            <Check height={16} stroke={disabled ? 'disabledBorder' : 'white'} width={16} />
           </styled.div>
         )}
         {isIntermediate && (
           <styled.div left="50%" position="absolute" top="50%" transform="translate(-50%, -50%)">
-            <Minus height={16} stroke="white" width={16} />
+            <Minus height={16} stroke={disabled ? 'disabledBorder' : 'white'} width={16} />
           </styled.div>
         )}
       </Flex>
@@ -100,28 +104,33 @@ const CheckboxStyle = cva({
     borderRadius: 'sm',
     border: '1px solid',
     display: 'flex',
-    background: 'black',
     justifyContent: 'center',
     alignItems: 'center',
     outline: 'none',
     position: 'relative',
     cursor: 'inherit',
+    borderColor: 'border',
   },
   variants: {
     type: {
       default: {
         bg: 'white',
-        borderColor: 'primary',
       },
       checked: {
         bg: 'primary',
-        borderColor: 'primary',
       },
       intermediate: {
         bg: 'primary',
-        borderColor: 'primary',
       },
       disabled: {
+        bg: 'disabledBackground',
+        borderColor: 'disabledBorder',
+      },
+      'checked-disabled': {
+        bg: 'disabledBackground',
+        borderColor: 'disabledBorder',
+      },
+      'intermediate-disabled': {
         bg: 'disabledBackground',
         borderColor: 'disabledBorder',
       },
