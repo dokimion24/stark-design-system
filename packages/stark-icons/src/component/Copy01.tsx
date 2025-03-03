@@ -1,10 +1,11 @@
 import { forwardRef } from 'react';
+import { color } from 'starkds-tokens';
 
 import type { IconProps } from '@/types/icon.ts';
 
 const Copy01 = forwardRef<SVGSVGElement, IconProps>(
   (
-    { className, width = '24', height = '24', viewBox = '0 0 24 24', stroke = 'white', ...rest },
+    { className, width = '24', height = '24', viewBox = '0 0 24 24', stroke = 'border', ...rest },
     ref,
   ) => {
     return (

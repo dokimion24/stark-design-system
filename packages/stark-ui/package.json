@@ -1,13 +1,49 @@
 {
   "name": "starkds-ui",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "sideEffects": false,
   "license": "MIT",
   "exports": {
-    "./button": {
-      "types": "./src/button.tsx",
-      "import": "./dist/button.mjs",
-      "require": "./dist/button.js"
+    "./styles.css": "./dist/styles.css",
+    "./Avatar": {
+      "types": "./dist/components/Avatar/index.d.ts",
+      "require": "./dist/Avatar.cjs",
+      "import": "./dist/Avatar.js"
+    },
+    "./Button": {
+      "types": "./dist/components/Button/index.d.ts",
+      "require": "./dist/Button.cjs",
+      "import": "./dist/Button.js"
+    },
+    "./Checkbox": {
+      "types": "./dist/components/Checkbox/index.d.ts",
+      "require": "./dist/Checkbox.cjs",
+      "import": "./dist/Checkbox.js"
+    },
+    "./Dropdown": {
+      "types": "./dist/components/Dropdown/index.d.ts",
+      "require": "./dist/Dropdown.cjs",
+      "import": "./dist/Dropdown.js"
+    },
+    "./Input": {
+      "types": "./dist/components/Input/index.d.ts",
+      "require": "./dist/Input.cjs",
+      "import": "./dist/Input.js"
+    },
+    "./Portal": {
+      "types": "./dist/components/Portal/index.d.ts",
+      "require": "./dist/Portal.cjs",
+      "import": "./dist/Portal.js"
+    },
+    "./Switch": {
+      "types": "./dist/components/Switch/index.d.ts",
+      "require": "./dist/Switch.cjs",
+      "import": "./dist/Switch.js"
+    },
+    "./Tooltip": {
+      "types": "./dist/components/Tooltip/index.d.ts",
+      "require": "./dist/Tooltip.cjs",
+      "import": "./dist/Tooltip.js"
     }
   },
   "scripts": {

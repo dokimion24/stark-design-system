@@ -1,14 +1,4 @@
 // 스케일 토큰
-export const gray50 = '#F9FAFB';
-export const gray100 = '#F3F4F6';
-export const gray200 = '#E5E7EB';
-export const gray300 = '#D1D5DB';
-export const gray400 = '#9CA3AF';
-export const gray500 = '#6B7280';
-export const gray600 = '#4B5563';
-export const gray700 = '#374151';
-export const gray800 = '#1F2937';
-export const gray900 = '#111827';
 
 export const grayNeutral50 = '#F9FAFB';
 export const grayNeutral100 = '#F3F4F6';
@@ -21,7 +11,7 @@ export const grayNeutral700 = '#384250';
 export const grayNeutral800 = '#1F2A37';
 export const grayNeutral900 = '#111927';
 
-export const grayNeturalDark50 = '#FAFAFA';
+export const grayDark50 = '#FAFAFA';
 export const grayDark100 = '#F0F1F1';
 export const grayDark200 = '#ECECEC';
 export const grayDark300 = '#CECECE';
@@ -91,22 +81,29 @@ export const secondaryHoverBackground = blue300;
 export const secondaryBorder = blue400;
 
 export const outlineHoverBackground = grayNeutral50;
+export const activeBackground = grayNeutral50;
 
 export const border = grayNeutral300;
+export const focusBorder = grayNeutral500;
+export const placeholder = grayNeutral500;
 
 export const success = blue600;
 export const error = red600;
 
 export const backgroundNormal = white;
 export const backgroundDimmer = blackOpacity80;
+export const backgroundInActive = grayNeutral100;
+export const backgroundActive = blue500;
 export const errorBackground = red100;
 
-export const disabledBackground = '#EAECF0';
+export const unpressed = grayNeutral100;
+export const pressed = blue500;
+
+export const disabledBackground = grayNeutral50;
 export const disabledText = grayNeutral400;
 export const disabledBorder = grayNeutral300;
 
-export const bluePressed = blue400;
-export const blueBackgroundPressed = blue50;
+export const captionColor = grayNeutral600;
 
 export const shadowXs = 'rgba(16, 24, 40, 0.05)';
 export const skeuomorphicShadow = 'rgba(16, 24, 40, 0.18)';
