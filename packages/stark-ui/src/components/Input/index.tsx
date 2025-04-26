@@ -1,13 +1,7 @@
 import { Flex, styled } from '@styled-system/jsx';
-import React, { forwardRef, useId } from 'react';
-import type { IconProps } from 'starkds-icons';
+import { forwardRef, useId } from 'react';
 
-export type InputProps = {
-  error?: boolean;
-  helperText?: string;
-  rightIcon?: React.ReactElement<IconProps>;
-  label?: string;
-} & React.InputHTMLAttributes<HTMLInputElement>;
+import type { InputProps } from './types';
 
 export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
   { error, helperText, rightIcon, label, ...props },
