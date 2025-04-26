@@ -5,25 +5,18 @@ import path from 'path';
 import baseConfig from '../shared-config/rollup.config.js';
 
 const extensions = ['.ts', '.tsx', '.js', '.jsx'];
-const components = [
-  'Avatar',
-  'Button',
-  'Checkbox',
-  'Dropdown',
-  'Input',
-  'Portal',
-  'Switch',
-  'Tooltip',
-];
-
-const input = {};
-components.forEach((comp) => {
-  input[comp] = `src/components/${comp}/index.tsx`;
-});
 
 export default {
   ...baseConfig,
-  input,
+  input: {
+    Avatar: './src/components/Avatar/index.tsx',
+    Button: './src/components/Button/index.tsx',
+    Checkbox: './src/components/Checkbox/index.tsx',
+    Dropdown: './src/components/Dropdown/index.tsx',
+    Input: './src/components/Input/index.tsx',
+    Portal: './src/components/utils/Portal/index.tsx',
+    Switch: './src/components/Switch/index.tsx',
+  },
   output: [
     {
       format: 'esm',
