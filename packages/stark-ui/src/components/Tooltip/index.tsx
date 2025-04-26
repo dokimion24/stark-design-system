@@ -1,10 +1,11 @@
 'use client';
 
 import { styled } from '@styled-system/jsx';
-import React, { cloneElement, useEffect, useRef } from 'react';
+import React, { cloneElement, useCallback, useEffect, useRef } from 'react';
 
-import { Portal } from '../Portal';
-import { calculateTooltipPosition, fadeIn, fadeOut, usePortal } from './hooks';
+import { usePortal } from '../../hooks/usePortal';
+import { Portal } from '../utils/Portal';
+import { calculateTooltipPosition, fadeIn, fadeOut } from './utils';
 
 export type TooltipProps = {
   children: React.ReactElement;
@@ -36,41 +37,53 @@ export const Tooltip = ({
     }
   };
 
-  const handleHide = () => {
-    if (delayTimer.current) {
-      clearTimeout(delayTimer.current);
-    }
-    if (tooltipRef.current && container) {
-      animationRef.current = fadeOut(tooltipRef.current, () => {
+  const handleHide = useCallback(
+    (immediate = false) => {
+      if (delayTimer.current) {
+        clearTimeout(delayTimer.current);
+        delayTimer.current = null;
+      }
+
+      if (immediate) {
+        console.log('immediate hide');
+        animationRef.current?.cancel();
         removePortalContainer();
-      });
-    }
-  };
+        return;
+      }
+
+      if (!tooltipRef.current || !container) return;
+      animationRef.current = fadeOut(tooltipRef.current, removePortalContainer);
+    },
+    [container, removePortalContainer],
+  );
 
   // container가 생성된 후 tooltip 위치 계산 및 fade-in 효과 적용
   useEffect(() => {
-    if (!container) return;
+    if (!container || !wrapperRef.current || !tooltipRef.current) return;
+
+    const tooltipEl = tooltipRef.current;
+    const wrapperEl = wrapperRef.current;
+
     window.requestAnimationFrame(() => {
-      if (wrapperRef.current && tooltipRef.current) {
-        calculateTooltipPosition(wrapperRef.current, tooltipRef.current, placement);
-        tooltipRef.current.style.opacity = '0';
-        animationRef.current = fadeIn(tooltipRef.current);
-      }
+      calculateTooltipPosition(wrapperEl, tooltipEl, placement);
+      animationRef.current = fadeIn(tooltipEl);
     });
   }, [container, placement]);
 
   // Escape 키 입력 시 tooltip 숨김 처리
   useEffect(() => {
+    if (!container) return;
+
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
-        handleHide();
+        handleHide(true);
       }
     };
     document.addEventListener('keydown', handleEscape);
     return () => {
       document.removeEventListener('keydown', handleEscape);
     };
-  }, []);
+  }, [handleHide]);
 
   useEffect(() => {
     return () => {
