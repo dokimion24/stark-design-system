@@ -48,7 +48,6 @@
   },
   "scripts": {
     "build": "rm -rf dist && rollup -c --bundleConfigAsCjs && tsc-alias && panda cssgen --outfile dist/styles.css",
-    "dev": "tsup --watch",
     "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}' --max-warnings 0",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
     "storybook": "storybook dev -p 6006",
