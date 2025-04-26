@@ -16,7 +16,7 @@ import { ChevronDown } from 'starkds-icons';
 
 import { generateUniqueId } from '@/utils/generate';
 
-import { Portal } from '../Portal';
+import { Portal } from '../utils/Portal';
 import { useClick, useKeyDown, useOptionListPosition } from './hooks';
 import type {
   DefaultDropdownValue,
