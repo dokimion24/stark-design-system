@@ -24,7 +24,8 @@
     }
   },
   "scripts": {
-    "build": "rm -rf dist && rollup -c --bundleConfigAsCjs && tsc --emitDeclarationOnly"
+    "build": "rm -rf dist && rollup -c --bundleConfigAsCjs && tsc --emitDeclarationOnly",
+    "generate:tokenList": "tsx ../scripts/generateTokenList.ts"
   },
   "keywords": [],
   "author": "dokimion24",
