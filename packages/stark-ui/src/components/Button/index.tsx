@@ -2,29 +2,12 @@
 
 import { cva } from '@styled-system/css/cva';
 import { styled } from '@styled-system/jsx';
-import type { CSSProperties, ElementType, ReactNode } from 'react';
+import type { ElementType } from 'react';
 import { forwardRef } from 'react';
 
-import type { PolymorphicComponentPropsWithRef, PolymorphicRef } from '@/types';
+import type { PolymorphicRef } from '@/types';
 
-export interface ButtonProps {
-  children: ReactNode;
-  disabled?: boolean;
-  size?: 'sm' | 'md' | 'lg' | 'xl' | '2xl';
-  variant?: 'primary' | 'secondary' | 'ghost' | 'outline';
-  icon?: ReactNode;
-  style?: CSSProperties;
-  className?: string;
-}
-
-type PolymorphicButtonProps<C extends ElementType> = PolymorphicComponentPropsWithRef<
-  C,
-  ButtonProps
->;
-
-type ButtonComponent = <C extends ElementType = 'button'>(
-  props: PolymorphicButtonProps<C>,
-) => ReactNode;
+import type { ButtonComponent, PolymorphicButtonProps } from './types';
 
 export const Button: ButtonComponent & { displayName?: string } = forwardRef(
   <C extends ElementType = 'button'>(

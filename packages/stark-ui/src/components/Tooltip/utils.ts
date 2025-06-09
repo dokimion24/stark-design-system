@@ -1,34 +1,5 @@
-import { useCallback, useEffect, useState } from 'react';
-
 const ANIMATION_DURATION_MS = 150;
 const TOOLTIP_GAP = 8;
-
-export const usePortal = () => {
-  const [container, setContainer] = useState<Element | null>(null);
-
-  const createPortalContainer = useCallback(() => {
-    if (!container) {
-      const newContainer = document.createElement('div');
-      document.body.appendChild(newContainer);
-      setContainer(newContainer);
-    }
-  }, [container]);
-
-  const removePortalContainer = useCallback(() => {
-    if (container) {
-      container.remove();
-      setContainer(null);
-    }
-  }, [container]);
-
-  useEffect(() => {
-    return () => {
-      container?.remove();
-    };
-  }, [container]);
-
-  return { container, createPortalContainer, removePortalContainer };
-};
 
 export const calculateTooltipPosition = (
   wrapperEl: HTMLElement,

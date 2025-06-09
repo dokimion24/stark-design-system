@@ -54,6 +54,10 @@ export const Default: Story = {
 };
 
 export const Placements: Story = {
+  args: {
+    children: <div />,
+    content: '',
+  },
   render: () => (
     <div style={{ display: 'grid', gap: '2rem', padding: '4rem' }}>
       <div style={{ display: 'flex', justifyContent: 'center' }}>

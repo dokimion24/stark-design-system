@@ -3,10 +3,7 @@
 import { styled } from '@styled-system/jsx';
 import { forwardRef, useId } from 'react';
 
-export type SwitchProps = { size?: 'sm' | 'md' } & Omit<
-  React.InputHTMLAttributes<HTMLInputElement>,
-  'size'
->;
+import type { SwitchProps } from './types';
 
 export const Switch = forwardRef<HTMLInputElement, SwitchProps>(function (
   { checked, onChange, disabled, size = 'md', ...props },
