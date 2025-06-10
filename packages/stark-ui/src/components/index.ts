@@ -1,9 +1,0 @@
-export { Avatar } from './Avatar';
-export { Button } from './Button';
-export { Checkbox } from './Checkbox';
-export { Dropdown } from './Dropdown';
-export { Input } from './Input';
-export { Switch } from './Switch';
-export { Toast } from './Toast';
-export { Tooltip } from './Tooltip';
-export { Portal } from './utils/Portal';
