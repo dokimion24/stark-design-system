@@ -92,38 +92,51 @@ type InputConfig = {
   disabled?: boolean;
 };
 
+const ControlledInputWrapper = (props: { config: InputConfig }) => {
+  const { name, label, initial, error, helperText, rightIcon, disabled } = props.config;
+  const [value, setValue] = useState(initial);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setValue(e.target.value);
+  };
+
+  return (
+    <Input
+      disabled={disabled}
+      error={error}
+      helperText={helperText}
+      label={label}
+      name={name}
+      rightIcon={rightIcon}
+      value={value}
+      onChange={handleChange}
+    />
+  );
+};
+
+const UncontrolledInputWrapper = (props: { config: InputConfig }) => {
+  const { name, label, initial, error, helperText, rightIcon, disabled } = props.config;
+
+  return (
+    <Input
+      defaultValue={initial}
+      disabled={disabled}
+      error={error}
+      helperText={helperText}
+      label={label}
+      name={name}
+      rightIcon={rightIcon}
+    />
+  );
+};
+
 const InputWrapper = (props: { config: InputConfig }) => {
-  const { name, label, initial, controlled, error, helperText, rightIcon, disabled } = props.config;
+  const { controlled } = props.config;
+
   if (controlled) {
-    const [value, setValue] = useState(initial);
-
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-      setValue(e.target.value);
-    };
-
-    return (
-      <Input
-        disabled={disabled}
-        error={error}
-        helperText={helperText}
-        label={label}
-        name={name}
-        rightIcon={rightIcon}
-        value={value}
-        onChange={handleChange}
-      />
-    );
+    return <ControlledInputWrapper config={props.config} />;
   } else {
-    return (
-      <Input
-        defaultValue={initial}
-        error={error}
-        helperText={helperText}
-        label={label}
-        name={name}
-        rightIcon={rightIcon}
-      />
-    );
+    return <UncontrolledInputWrapper config={props.config} />;
   }
 };
 
