@@ -16,6 +16,8 @@ export default {
     Input: './src/components/Input/index.tsx',
     Portal: './src/components/utils/Portal/index.tsx',
     Switch: './src/components/Switch/index.tsx',
+    Toast: './src/components/Toast/index.tsx',
+    Tooltip: './src/components/Tooltip/index.tsx',
   },
   output: [
     {
