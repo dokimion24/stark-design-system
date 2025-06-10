@@ -83,7 +83,7 @@ export const Tooltip = ({
     return () => {
       document.removeEventListener('keydown', handleEscape);
     };
-  }, [handleHide]);
+  }, [container, handleHide]);
 
   useEffect(() => {
     return () => {
