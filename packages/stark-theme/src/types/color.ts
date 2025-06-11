@@ -78,6 +78,7 @@ export type ColorToken =
   | 'placeholder'
   | 'success'
   | 'error'
+  | 'warning'
   | 'backgroundNormal'
   | 'backgroundDimmer'
   | 'backgroundInActive'

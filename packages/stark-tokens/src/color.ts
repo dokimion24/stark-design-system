@@ -89,6 +89,7 @@ export const placeholder = grayNeutral500;
 
 export const success = blue600;
 export const error = red600;
+export const warning = yellow600;
 
 export const backgroundNormal = white;
 export const backgroundDimmer = blackOpacity80;
