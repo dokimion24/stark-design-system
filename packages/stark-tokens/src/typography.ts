@@ -166,100 +166,100 @@ export const displayXsBold = {
 
 // Text xl
 export const textXlRegular = {
-  fontSize: '1.125rem',
+  fontSize: '1.25rem',
   lineHeight: '1.75rem',
   fontWeight: 400,
 };
 
 export const textXlMedium = {
-  fontSize: '1.125rem',
+  fontSize: '1.25rem',
   lineHeight: '1.75rem',
   fontWeight: 500,
 };
 
 export const textXlSemibold = {
-  fontSize: '1.125rem',
+  fontSize: '1.25rem',
   lineHeight: '1.75rem',
   fontWeight: 600,
 };
 
 export const textXlBold = {
-  fontSize: '1.125rem',
+  fontSize: '1.25rem',
   lineHeight: '1.75rem',
   fontWeight: 700,
 };
 
 // Text lg
 export const textLgRegular = {
-  fontSize: '1rem',
+  fontSize: '1.125rem',
   lineHeight: '1.5rem',
   fontWeight: 400,
 };
 
 export const textLgMedium = {
-  fontSize: '1rem',
+  fontSize: '1.125rem',
   lineHeight: '1.5rem',
   fontWeight: 500,
 };
 
 export const textLgSemibold = {
-  fontSize: '1rem',
+  fontSize: '1.125rem',
   lineHeight: '1.5rem',
   fontWeight: 600,
 };
 
 export const textLgBold = {
-  fontSize: '1rem',
+  fontSize: '1.125rem',
   lineHeight: '1.5rem',
   fontWeight: 700,
 };
 
 // Text md
 export const textMdRegular = {
-  fontSize: '0.875rem',
+  fontSize: '1rem',
   lineHeight: '1.25rem',
   fontWeight: 400,
 };
 
 export const textMdMedium = {
-  fontSize: '0.875rem',
+  fontSize: '1rem',
   lineHeight: '1.25rem',
   fontWeight: 500,
 };
 
 export const textMdSemibold = {
-  fontSize: '0.875rem',
+  fontSize: '1rem',
   lineHeight: '1.25rem',
   fontWeight: 600,
 };
 
 export const textMdBold = {
-  fontSize: '0.875rem',
+  fontSize: '1rem',
   lineHeight: '1.25rem',
   fontWeight: 700,
 };
 
 // Text sm
 export const textSmRegular = {
-  fontSize: '0.75rem',
+  fontSize: '0.875rem',
   lineHeight: '1.125rem',
   fontWeight: 400,
 };
 
 export const textSmMedium = {
-  fontSize: '0.75rem',
+  fontSize: '0.875rem',
   lineHeight: '1.125rem',
   fontWeight: 500,
 };
 
 export const textSmSemibold = {
-  fontSize: '0.75rem',
+  fontSize: '0.875rem',
   lineHeight: '1.125rem',
   fontWeight: 600,
 };
 
 export const textSmBold = {
-  fontSize: '0.75rem',
+  fontSize: '0.875rem',
   lineHeight: '1.125rem',
   fontWeight: 700,
 };
