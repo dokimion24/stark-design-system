@@ -4,8 +4,8 @@ import { cva } from '@styled-system/css';
 import React, { useCallback, useEffect, useState } from 'react';
 
 import { Portal } from '../utils/Portal';
-import { ToastBar } from './ToastBar';
-import Toaster from './toaster';
+import Toaster from './manager';
+import { ToastContainer } from './ToastContainer';
 import type { ToastItem, ToastPosition } from './types';
 
 export interface Props {
@@ -38,8 +38,9 @@ export const Toast = ({
   const removeToast = useCallback((id: string) => {
     toastInstance.removeToastItem(id);
     setHeights((prev) => {
-      const { [id]: _, ...rest } = prev;
-      return rest;
+      const newHeights = { ...prev };
+      delete newHeights[id];
+      return newHeights;
     });
   }, []);
 
@@ -64,7 +65,7 @@ export const Toast = ({
         {toastItems.map((item, index) => {
           const offsetY = getOffsetY(index);
           return (
-            <ToastBar
+            <ToastContainer
               duration={duration}
               key={item.id}
               offsetY={offsetY}
