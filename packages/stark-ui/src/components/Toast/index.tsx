@@ -1,6 +1,6 @@
 'use client';
 
-import { cva } from '@styled-system/css';
+import { css, cva } from '@styled-system/css';
 import React, { useCallback, useEffect, useState } from 'react';
 
 import { Portal } from '../utils/Portal';
@@ -10,7 +10,7 @@ import type { ToastItem, ToastPosition } from './types';
 
 export interface Props {
   duration?: number;
-  zIndex?: number;
+  zIndex?: number | string;
   gap?: number;
   position?: ToastPosition;
   container?: Element | null;
@@ -20,7 +20,7 @@ export let toastInstance = new Toaster();
 
 export const Toast = ({
   duration = 3000,
-  zIndex = 9999,
+  zIndex: zIndexProp = 'toast',
   gap = 8,
   position = 'top',
   container = document.body,
@@ -61,7 +61,7 @@ export const Toast = ({
 
   return (
     <Portal container={container}>
-      <div className={toastContainerStyle()} style={{ zIndex }}>
+      <div className={`${toastContainerStyle()} ${css({ zIndex: zIndexProp })}`}>
         {toastItems.map((item, index) => {
           const offsetY = getOffsetY(index);
           return (
@@ -71,6 +71,7 @@ export const Toast = ({
               offsetY={offsetY}
               position={position}
               toastItem={item}
+              zIndex={zIndexProp}
               onEmitElementHeight={onEmitElementHeight}
               onRemoveToastItem={removeToast}
             />
