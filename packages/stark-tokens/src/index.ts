@@ -3,3 +3,4 @@ export * as radius from './radius.ts';
 export * as shadow from './shadow.ts';
 export * as space from './space.ts';
 export * as typography from './typography.ts';
+export * as zIndex from './zIndex.ts';
