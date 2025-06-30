@@ -30,7 +30,7 @@
     "@babel/preset-env": "^7.24.5",
     "@babel/preset-typescript": "^7.24.1",
     "@changesets/changelog-git": "^0.2.0",
-    "@changesets/cli": "^2.27.1",
+    "@changesets/cli": "^2.27.2",
     "@pandacss/dev": "^0.48.0",
     "@rollup/plugin-alias": "^5.1.0",
     "@rollup/plugin-babel": "^6.0.4",
