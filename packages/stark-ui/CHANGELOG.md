@@ -1,5 +1,16 @@
 # starkds-ui
 
+## 0.2.0
+
+### Minor Changes
+
+- 7276c65: chore: Re-versioning for release
+
+### Patch Changes
+
+- Updated dependencies [7276c65]
+  - starkds-icons@0.2.0
+
 ## 0.1.0
 
 ### Minor Changes
