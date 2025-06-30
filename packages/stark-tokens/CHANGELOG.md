@@ -1,5 +1,11 @@
 # starkds-tokens
 
+## 0.1.0
+
+### Minor Changes
+
+- 4d81928: feat: Add zIndex tokens
+
 ## 0.0.4
 
 ### Patch Changes

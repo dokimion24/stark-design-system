@@ -1,6 +1,6 @@
 {
   "name": "starkds-tokens",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "repository": {
     "type": "git",
     "directory": "packages/stark-tokens"
