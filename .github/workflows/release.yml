@@ -39,7 +39,6 @@ jobs:
 
       - name: Install Dependencies
         run: pnpm install --no-frozen-lockfile
-        working-directory: packages/stark-ui
 
       - name: Build packages
         run: pnpm build
