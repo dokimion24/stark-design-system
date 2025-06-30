@@ -22,21 +22,23 @@ export default {
   },
   output: [
     {
-      format: 'esm',
       dir: 'dist',
-      preserveModules: true,
-      preserveModulesRoot: 'src',
+      format: 'esm',
       entryFileNames: '[name].js',
     },
     {
-      format: 'cjs',
       dir: 'dist',
+      format: 'cjs',
       entryFileNames: '[name].cjs',
     },
   ],
   plugins: [
     ...baseConfig.plugins,
-    typescript(),
+    typescript({
+      declaration: true,
+      declarationDir: 'dist',
+      rootDir: 'src',
+    }),
     babel({
       extensions,
       include: ['src/**/*'],
