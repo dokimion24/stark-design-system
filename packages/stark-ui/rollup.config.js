@@ -14,8 +14,11 @@ export default {
     Checkbox: './src/components/Checkbox/index.tsx',
     Dropdown: './src/components/Dropdown/index.tsx',
     Input: './src/components/Input/index.tsx',
+    Modal: './src/components/Modal/index.tsx',
     Portal: './src/components/utils/Portal/index.tsx',
     Switch: './src/components/Switch/index.tsx',
+    Toast: './src/components/Toast/index.tsx',
+    Tooltip: './src/components/Tooltip/index.tsx',
   },
   output: [
     {

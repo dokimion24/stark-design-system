@@ -30,6 +30,11 @@
       "require": "./dist/Input.cjs",
       "import": "./dist/Input.js"
     },
+    "./Modal": {
+      "types": "./dist/components/Modal/index.d.ts",
+      "require": "./dist/Modal.cjs",
+      "import": "./dist/Modal.js"
+    },
     "./Portal": {
       "types": "./dist/components/Portal/index.d.ts",
       "require": "./dist/Portal.cjs",

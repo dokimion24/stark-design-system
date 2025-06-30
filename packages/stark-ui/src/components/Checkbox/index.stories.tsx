@@ -94,53 +94,53 @@ export const Disabled: Story = {
   },
 };
 
+const GroupExample = () => {
+  const [checkedStates, setCheckedStates] = useState<Record<string, boolean | 'intermediate'>>({});
+
+  const handleChange = (title: string) => {
+    setCheckedStates((prev) => ({
+      ...prev,
+      [title]: !prev[title],
+    }));
+  };
+
+  const examples = [
+    { title: '기본', props: {} },
+    { title: '선택됨', props: { checked: true } },
+    { title: 'Intermediate', props: { checked: 'intermediate' as const } },
+    { title: '비활성화', props: { disabled: true } },
+    { title: '선택됨 + 비활성화', props: { checked: true, disabled: true } },
+    {
+      title: 'Intermediate + 비활성화',
+      props: { checked: 'intermediate' as const, disabled: true },
+    },
+  ];
+
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', padding: '1rem' }}>
+      {examples.map(({ title, props }) => (
+        <div key={title}>
+          <h3 style={{ marginBottom: '1rem' }}>{title}</h3>
+          <Checkbox
+            name="checkbox-example"
+            {...props}
+            checked={props.disabled ? props.checked : checkedStates[title] ?? props.checked}
+            onChange={() => !props.disabled && handleChange(title)}
+          >
+            체크박스 {title}
+          </Checkbox>
+        </div>
+      ))}
+    </div>
+  );
+};
+
 export const Group: Story = {
   args: {
     name: 'checkbox-group',
     children: 'Checkbox',
   },
-  render: () => {
-    const [checkedStates, setCheckedStates] = useState<Record<string, boolean | 'intermediate'>>(
-      {},
-    );
-
-    const handleChange = (title: string) => {
-      setCheckedStates((prev) => ({
-        ...prev,
-        [title]: !prev[title],
-      }));
-    };
-
-    const examples = [
-      { title: '기본', props: {} },
-      { title: '선택됨', props: { checked: true } },
-      { title: 'Intermediate', props: { checked: 'intermediate' as const } },
-      { title: '비활성화', props: { disabled: true } },
-      { title: '선택됨 + 비활성화', props: { checked: true, disabled: true } },
-      {
-        title: 'Intermediate + 비활성화',
-        props: { checked: 'intermediate' as const, disabled: true },
-      },
-    ];
-
-    return (
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', padding: '1rem' }}>
-        {examples.map(({ title, props }) => (
-          <div key={title}>
-            <h3 style={{ marginBottom: '1rem' }}>{title}</h3>
-            <Checkbox
-              name="checkbox-example"
-              {...props}
-              checked={props.disabled ? props.checked : checkedStates[title] ?? props.checked}
-              onChange={() => !props.disabled && handleChange(title)}
-            >
-              체크박스 {title}
-            </Checkbox>
-          </div>
-        ))}
-      </div>
-    );
-  },
+  render: () => <GroupExample />,
   parameters: {
     docs: {
       description: {

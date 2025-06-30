@@ -1,5 +1,7 @@
 export * from '../types/icon.ts';
+export { default as AlertCircle } from './AlertCircle.tsx';
 export { default as Check } from './Check.tsx';
+export { default as CheckCircle } from './CheckCircle.tsx';
 export { default as ChevronDown } from './ChevronDown.tsx';
 export { default as Copy01 } from './Copy01.tsx';
 export { default as Download01 } from './Download01.tsx';

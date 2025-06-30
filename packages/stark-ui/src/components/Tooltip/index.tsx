@@ -5,16 +5,8 @@ import React, { cloneElement, useCallback, useEffect, useRef } from 'react';
 
 import { usePortal } from '../../hooks/usePortal';
 import { Portal } from '../utils/Portal';
+import type { TooltipProps } from './types';
 import { calculateTooltipPosition, fadeIn, fadeOut } from './utils';
-
-export type TooltipProps = {
-  children: React.ReactElement;
-  content: React.ReactNode;
-  placement?: 'top' | 'bottom' | 'left' | 'right';
-  delay?: number;
-  disabled?: boolean;
-  zIndex?: number;
-};
 
 export const Tooltip = ({
   children,
@@ -83,7 +75,7 @@ export const Tooltip = ({
     return () => {
       document.removeEventListener('keydown', handleEscape);
     };
-  }, [handleHide]);
+  }, [container, handleHide]);
 
   useEffect(() => {
     return () => {
