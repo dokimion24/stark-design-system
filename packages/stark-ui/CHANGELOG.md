@@ -1,5 +1,16 @@
 # starkds-ui
 
+## 0.1.0
+
+### Minor Changes
+
+- 4d81928: feat: Introduce major new components and improve overall structure
+
+### Patch Changes
+
+- Updated dependencies [4d81928]
+  - starkds-icons@0.1.0
+
 ## 0.0.5
 
 ### Patch Changes
