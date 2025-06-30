@@ -1,5 +1,13 @@
 # starkds-ui
 
+## 0.2.1
+
+### Patch Changes
+
+- 7d71072: Update output formats and enhance TypeScript config
+- Updated dependencies [7d71072]
+  - starkds-icons@0.2.1
+
 ## 0.2.0
 
 ### Minor Changes
