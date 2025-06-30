@@ -1,5 +1,11 @@
 # starkds-theme
 
+## 0.1.1
+
+### Patch Changes
+
+- 7d71072: Update output formats and enhance TypeScript config
+
 ## 0.1.0
 
 ### Minor Changes
