@@ -35,7 +35,7 @@ const meta = {
     zIndex: {
       description: '토스트의 z-index 값',
       control: 'number',
-      defaultValue: 1000,
+      defaultValue: 'toast',
     },
   },
   tags: ['autodocs'],
@@ -49,7 +49,6 @@ export const Default: Story = {
     duration: 30000,
     position: 'top',
     gap: 8,
-    zIndex: 1000,
   },
   render: (args) => {
     const showToast = () => {
@@ -70,7 +69,6 @@ export const AllTypes: Story = {
     duration: 3000,
     position: 'top',
     gap: 8,
-    zIndex: 1000,
   },
   render: (args) => {
     const showSuccessToast = () => {

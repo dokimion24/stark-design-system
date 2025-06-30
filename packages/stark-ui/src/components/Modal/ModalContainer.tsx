@@ -32,6 +32,16 @@ export const ModalContainer = ({ modalItem, onRemove }: ModalProps): React.React
     [closeOnBackdropClick, handleClose],
   );
 
+  const handleBackdropKeyDown = useCallback(
+    (e: React.KeyboardEvent) => {
+      if (closeOnBackdropClick && (e.key === 'Enter' || e.key === ' ')) {
+        e.preventDefault();
+        handleClose();
+      }
+    },
+    [closeOnBackdropClick, handleClose],
+  );
+
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
       if (closeOnEscape && e.key === 'Escape' && closable) {
@@ -46,8 +56,15 @@ export const ModalContainer = ({ modalItem, onRemove }: ModalProps): React.React
   }, [closeOnEscape, closable, handleClose]);
 
   return (
-    <div className={backdropStyle()} onClick={handleBackdropClick}>
-      <div className={modalStyle({ size })}>
+    <div
+      aria-label="Close modal"
+      className={backdropStyle()}
+      role="button"
+      tabIndex={-1}
+      onClick={handleBackdropClick}
+      onKeyDown={handleBackdropKeyDown}
+    >
+      <div aria-modal="true" className={modalStyle({ size })} role="dialog">
         {(title || showCloseButton) && (
           <div className={headerStyle}>
             {title && <h2 className={titleStyle}>{title}</h2>}
@@ -80,13 +97,13 @@ const backdropStyle = cva({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    zIndex: 50,
+    zIndex: 'modal',
   },
 });
 
 const modalStyle = cva({
   base: {
-    backgroundColor: 'white',
+    backgroundColor: 'backgroundNormal',
     borderRadius: 'lg',
     boxShadow: 'xl',
     maxHeight: '90vh',
@@ -112,14 +129,14 @@ const headerStyle = css({
   py: 'lg',
   borderBottomWidth: '1px',
   borderBottomStyle: 'solid',
-  borderBottomColor: 'gray.200',
+  borderBottomColor: 'border',
 });
 
 const titleStyle = css({
   margin: 0,
   fontSize: 'lg',
   fontWeight: 'semibold',
-  color: 'gray.900',
+  color: 'textBlack',
 });
 
 const closeButtonStyle = cva({
@@ -128,11 +145,11 @@ const closeButtonStyle = cva({
     border: 'none',
     fontSize: '24px',
     cursor: 'pointer',
-    color: 'gray.500',
+    color: 'placeholder',
     padding: 'xs',
     lineHeight: 1,
     _hover: {
-      color: 'gray.700',
+      color: 'textBlack',
     },
   },
 });

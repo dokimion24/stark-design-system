@@ -1,5 +1,6 @@
 'use client';
 
+import { css } from '@styled-system/css';
 import React, { useCallback, useEffect, useState } from 'react';
 
 import { Portal } from '../utils/Portal';
@@ -8,13 +9,16 @@ import { ModalContainer } from './ModalContainer';
 import type { ModalItem } from './types';
 
 export interface Props {
-  zIndex?: number;
+  zIndex?: number | string;
   container?: Element | null;
 }
 
 export let modalInstance = new ModalManager();
 
-export const Modal = ({ zIndex = 1000, container = document.body }: Props): React.ReactElement => {
+export const Modal = ({
+  zIndex: zIndexProp = 'modal',
+  container = document.body,
+}: Props): React.ReactElement => {
   const [modalItems, setModalItems] = useState<ModalItem[]>([]);
 
   useEffect(() => {
@@ -30,7 +34,7 @@ export const Modal = ({ zIndex = 1000, container = document.body }: Props): Reac
 
   return (
     <Portal container={container}>
-      <div style={{ zIndex }}>
+      <div className={css({ zIndex: zIndexProp })}>
         {modalItems.map((item) => (
           <ModalContainer key={item.id} modalItem={item} onRemove={removeModal} />
         ))}
@@ -53,6 +57,5 @@ export const modal = {
   }): Promise<boolean> => modalInstance.confirm(config),
 };
 
-// 기존 컴포넌트들도 export (호환성 유지)
 export { ModalContainer } from './ModalContainer';
 export type { ModalItem, ModalProps } from './types';
