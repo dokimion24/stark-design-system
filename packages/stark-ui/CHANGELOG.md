@@ -1,5 +1,11 @@
 # starkds-ui
 
+## 0.2.2
+
+### Patch Changes
+
+- 136d73b: Remove watch option and dependencies from panda.config.ts
+
 ## 0.2.1
 
 ### Patch Changes
