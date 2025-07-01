@@ -1,27 +1,11 @@
 import { cva } from '@styled-system/css';
-import type { ElementType, PropsWithChildren, ReactNode } from 'react';
+import type { ElementType } from 'react';
 import { forwardRef } from 'react';
 import { User } from 'starkds-icons';
 
-import type {
-  PolymorphicComponentPropsWithoutRef,
-  PolymorphicComponentPropsWithRef,
-  PolymorphicRef,
-} from '@/types/polymorphic';
+import type { PolymorphicRef } from '@/types/polymorphic';
 
-export interface Props {
-  size?: 'sm' | 'md' | 'lg' | 'xl';
-  ImageComponent?: ElementType;
-  imageUrl?: string;
-  badgeIcon?: ReactNode;
-}
-
-type AvatarProps<T extends ElementType> = PolymorphicComponentPropsWithoutRef<T, Props> &
-  PropsWithChildren;
-
-type AvatarComponent = <T extends ElementType = 'div'>(
-  props: PolymorphicComponentPropsWithRef<T, AvatarProps<T>>,
-) => ReactNode;
+import type { AvatarComponent, AvatarProps } from './types';
 
 const AvatarContainerStyle = cva({
   base: {
@@ -131,4 +115,4 @@ export const Avatar: AvatarComponent = forwardRef(
   },
 );
 
-export default Avatar;
+export type { AvatarProps };

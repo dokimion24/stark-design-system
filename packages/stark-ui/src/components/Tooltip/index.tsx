@@ -150,3 +150,5 @@ const TooltipContent = styled('div', {
     opacity: 0,
   },
 });
+
+export type { TooltipProps };

@@ -140,3 +140,5 @@ const CheckboxStyle = cva({
     type: 'default',
   },
 });
+
+export type { CheckboxProps };
