@@ -1,5 +1,11 @@
 # starkds-ui
 
+## 0.2.3
+
+### Patch Changes
+
+- 23063e3: export props type in index.ts Refactor UI components to export prop types and update type definitions
+
 ## 0.2.2
 
 ### Patch Changes
