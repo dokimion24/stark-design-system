@@ -97,3 +97,5 @@ const HelperText = styled('p', {
     error: false,
   },
 });
+
+export type { InputProps };

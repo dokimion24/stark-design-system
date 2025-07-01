@@ -2,7 +2,7 @@ import type { CSSProperties, ElementType, ReactNode } from 'react';
 
 import type { PolymorphicComponentPropsWithRef } from '@/types';
 
-export interface ButtonProps {
+export type ButtonProps = {
   children: ReactNode;
   disabled?: boolean;
   size?: 'sm' | 'md' | 'lg' | 'xl' | '2xl';
@@ -10,7 +10,7 @@ export interface ButtonProps {
   icon?: ReactNode;
   style?: CSSProperties;
   className?: string;
-}
+};
 
 export type PolymorphicButtonProps<C extends ElementType> = PolymorphicComponentPropsWithRef<
   C,

@@ -286,3 +286,5 @@ export const OptionStyle = cva({
     },
   },
 });
+
+export type { DropdownProps };

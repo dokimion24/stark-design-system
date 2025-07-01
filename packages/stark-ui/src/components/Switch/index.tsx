@@ -130,3 +130,5 @@ const Thumb = styled('span', {
     checked: false,
   },
 });
+
+export type { SwitchProps };

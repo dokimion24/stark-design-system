@@ -8,13 +8,13 @@ import Toaster from './manager';
 import { ToastContainer } from './ToastContainer';
 import type { ToastItem, ToastPosition } from './types';
 
-export interface Props {
+export type ToastProps = {
   duration?: number;
   zIndex?: number | string;
   gap?: number;
   position?: ToastPosition;
   container?: Element | null;
-}
+};
 
 export let toastInstance = new Toaster();
 
@@ -24,7 +24,7 @@ export const Toast = ({
   gap = 8,
   position = 'top',
   container = document.body,
-}: Props): React.ReactElement => {
+}: ToastProps): React.ReactElement => {
   const [toastItems, setToastItems] = useState<ToastItem[]>([]);
   const [heights, setHeights] = useState<Record<string, number>>({});
 

@@ -7,7 +7,7 @@ import { forwardRef } from 'react';
 
 import type { PolymorphicRef } from '@/types';
 
-import type { ButtonComponent, PolymorphicButtonProps } from './types';
+import type { ButtonComponent, ButtonProps, PolymorphicButtonProps } from './types';
 
 export const Button: ButtonComponent & { displayName?: string } = forwardRef(
   <C extends ElementType = 'button'>(
@@ -159,3 +159,5 @@ const ContentStyle = cva({
 });
 
 Button.displayName = 'Button';
+
+export type { ButtonProps };
